@@ -1,108 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Saya</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            display: flex;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .left-panel {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            width: 35%;
-            text-align: center;
-        }
-        .left-panel img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-        .left-panel h1 {
-            font-size: 22px;
-            margin-top: 10px;
-        }
-        .left-panel p {
-            font-size: 14px;
-        }
-        .right-panel {
-            padding: 20px;
-            width: 65%;
-        }
-        .right-panel h2 {
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-    </style>
+    <title>CV - Hudzaifah Arrantisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="left-panel">
-            <img src="../img/H.jpg" alt="Foto Profil">
-            <h1>Hudzaifah Arrantisi</h1>
-            <p><em>Lulusan SMK DAARUTTAUHID</em></p>
-            <h2>Kontak</h2>
-            <p>📞 085219545503</p>
-            <p>📍 RT.3/RW.6, Kebagusan, No.41, Ps. Minggu, Kota Jakarta Selatan 12520</p>
-            <a>🌐 nlink.at/Hudzaifah</>
-            <h2>Keahlian</h2>
-            <ul>
-                <li>Penetration Testing</li>
-                <li>Web Security</li>
-                <li>HTML, CSS, JavaScript</li>
-                <li>Python</li>
-            </ul>
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden md:flex">
+        <!-- Left Panel -->
+        <div class="bg-gray-800 text-white p-6 flex flex-col items-center w-full md:w-1/3">
+            <img src="../img/H.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full border-4 border-white mb-4">
+            <h1 class="text-xl font-semibold">Hudzaifah Arrantisi</h1>
+            <p class="text-sm italic">Lulusan SMK DAARUTTAUHID</p>
+            <div class="mt-4 text-center">
+                <h2 class="text-lg font-semibold border-b border-gray-500 pb-1">Kontak</h2>
+                <p>📞 085219545503</p>
+                <p>📍 Kebagusan, Ps. Minggu, Jakarta Selatan</p>
+                <p>🌐 <a href="https://nlink.at/Hudzaifah" class="text-blue-300">nlink.at/Hudzaifah</a></p>
+            </div>
+            <div class="mt-4 text-center">
+                <h2 class="text-lg font-semibold border-b border-gray-500 pb-1">Keahlian</h2>
+                <ul class="mt-2 text-sm">
+                    <li>✅ Penetration Testing</li>
+                    <li>✅ Web Security</li>
+                    <li>✅ HTML, CSS, JavaScript</li>
+                    <li>✅ Python</li>
+                </ul>
+            </div>
         </div>
-        <div class="right-panel">
-            <h2>Data Pribadi</h2>
-            <ul>
-                <li><strong>Tempat, Tanggal Lahir : </strong>Jakarta 05 juni 2004</li>
+        
+        <!-- Right Panel -->
+        <div class="p-6 w-full md:w-2/3">
+            <h2 class="text-xl font-semibold border-b-2 border-gray-800 pb-1">Data Pribadi</h2>
+            <ul class="mt-2 text-sm">
+                <li><strong>Tempat, Tanggal Lahir:</strong> Jakarta, 05 Juni 2004</li>
                 <li><strong>Jenis Kelamin:</strong> Laki-laki</li>
                 <li><strong>Agama:</strong> Islam</li>
                 <li><strong>Kewarganegaraan:</strong> Indonesia</li>
             </ul>
-            <h2>Pendidikan</h2>
-            <ul>
-                <strong>STT-NF - Teknik Informatika</strong> <li>(2024 - Sekarang)</li>
-                <hr>
-                <strong>SMK DAARUT TAUHID BANDUNG - Teknik Komputer Jaringan </strong> <li>(2019 - 2022)</li>
-                <hr>
-                <strong>SEKOLAH QURAN INDONESIA </strong> <li>(2016 - 2019)</li>
+            
+            <h2 class="text-xl font-semibold border-b-2 border-gray-800 pb-1 mt-4">Pendidikan</h2>
+            <ul class="mt-2 text-sm">
+                <li><strong>STT-NF - Teknik Informatika</strong> (2024 - Sekarang)</li>
+                <li><strong>SMK DAARUT TAUHID BANDUNG - Teknik Komputer Jaringan</strong> (2019 - 2022)</li>
+                <li><strong>SEKOLAH QURAN INDONESIA</strong> (2016 - 2019)</li>
             </ul>
-            <h2>Pengalaman</h2>
-            <ul>
-                <li><strong>>(Pentester Website)</strong> System website SMK DAARUTTAUHID</li>
+            
+            <h2 class="text-xl font-semibold border-b-2 border-gray-800 pb-1 mt-4">Pengalaman</h2>
+            <ul class="mt-2 text-sm">
+                <li><strong>Pentester Website</strong> - SMK DAARUTTAUHID</li>
                 <li>Melakukan pengujian keamanan pada berbagai aplikasi web dan memberikan laporan keamanan.</li>
                 <br>
-                <li><strong>>(Menejemen 2 Usaha orang tua)</strong>Toko Grosir dan Rumah makan</li>
-                <li>Melakukan Pengecekan pemasukan/pengeluaran barang dan memastikan barang baru dan masih segar  </li>
+                <li><strong>Manajemen Usaha</strong> - Toko Grosir & Rumah Makan</li>
+                <li>Melakukan pengecekan pemasukan/pengeluaran barang dan memastikan barang baru dan masih segar.</li>
             </ul>
         </div>
     </div>
+    
+    <!-- Back Button -->
     <a href="../index.html" class="fixed bottom-6 right-6 bg-green-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-green-500 transition-colors duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
