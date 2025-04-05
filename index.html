@@ -17,6 +17,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+</script>
 <body>
     <nav class="fixed w-full bg-gray-900 text-white z-50">
         <div class="container mx-auto px-6">
@@ -483,7 +496,7 @@
                 <a href="./sertif/Course_Completion_Certificate.pdf" class="text-teal-500 hover:text-teal-400 mt-2 inline-block" target="_blank">View Certificate</a>
             </div>
              <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
-                <img src="/img/hudzaifah.jpg" alt="Certificate 3" class="w-full h-48 object-cover rounded-md mb-4">
+                <img src="/img/HUDZAIFAH ARRANTISI  7.jpg   " alt="Certificate 3" class="w-full h-48 object-cover rounded-md mb-4">
                 <h5 class="font-bold text-white text-xl mb-2">Cyber Security Program Management and Oversight</h5>
                 <a href="./sertif/cybrary-cert-security-security-program-management-and-oversight.pdf" class="text-teal-500 hover:text-teal-400 mt-2 inline-block" target="_blank">View Certificate</a>
             </div>

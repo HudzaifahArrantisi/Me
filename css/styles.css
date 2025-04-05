@@ -1,4 +1,4 @@
-html, body{
+html, body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(23, 24, 49);
     width: 100%;
@@ -7,9 +7,41 @@ html, body{
     padding: 0;
     overflow: hidden;
 }
+
+img {
+    -webkit-user-drag: none; /* Untuk browser berbasis WebKit (Chrome, Safari) */
+    -khtml-user-drag: none; /* Untuk browser berbasis KHTML (legacy) */
+    -moz-user-drag: none; /* Untuk Firefox */
+    -o-user-drag: none; /* Untuk Opera */
+    user-drag: none; /* Standar modern */
+    
+    -webkit-touch-callout: none; /* Mencegah menu popup di iOS */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none; /* Standar modern */
+    
+    pointer-events: none; /* Opsional - matikan jika ingin gambar tetap bisa diklik */
+}
+
+/* Alternatif jika pointer-events: none mengganggu fungsionalitas */
+.protected-img {
+    position: relative;
+}
+.protected-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:  ​0;
+    bottom: 0;
+    z-index: 1;
+}
+
 html {
     scroll-behavior: smooth;
-  }
+}
+
 body {
     position: fixed;
     top: 0;
