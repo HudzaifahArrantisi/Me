@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="shortcut icon" href="/img/online-learning.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>E-Learning📚</h1>
+            <p>Penting nya pendidikan dan letersi digital</p>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Halaman Daftar Kursus -->
+        <section id="courses" style="display: block;">
+            <h2 class="section-title">Kursus Tersedia</h2>
+            <div class="course-container">
+                <div class="course-card">
+                    <h3>Matematika Dasar</h3>
+                    <p>Pelajari konsep dasar matematika untuk pemula.</p>
+                    <button class="btn" onclick="showQuiz(1)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
+                <div class="course-card">
+                    <h3>Bahasa Inggris</h3>
+                    <p>Tingkatkan kemampuan bahasa Inggris Anda.</p>
+                    <button class="btn" onclick="showQuiz(2)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
+                <div class="course-card">
+                    <h3>Kimia Dasar</h3>
+                    <p>Belajar kimia dasar.</p>
+                    <button class="btn" onclick="showQuiz(3)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
+                <div class="course-card">
+                    <h3>Fisika</h3>
+                    <p>Belajar fisika dasar.</p>
+                    <button class="btn" onclick="showQuiz(4)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
+                <div class="course-card">
+                    <h3>Penalaran Kuantitatif</h3>
+                    <p>PK dasar</p>
+                    <button class="btn" onclick="showQuiz(5)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
+                <div class="course-card">
+                    <h3>Pendidikan Ilmu Sejarah</h3>
+                    <p>Pelajari perjalanan sejarah dan peradaban dunia.</p>
+                    <button class="btn" onclick="showQuiz(6)">
+                        <i class="fas fa-play"></i> Mulai Latihan
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Halaman Quiz -->
+        <section id="quiz-section" style="display: none;">
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Progress</span>
+                    <span id="progress-text">0/15</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="quiz-progress"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <h2 class="quiz-title" id="quiz-title">Latihan Penalaran Kuantitatif</h2>
+                <div id="quiz-content">
+                    <!-- Konten quiz akan dimuat secara dinamis -->
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                    <button class="btn" id="back-btn" onclick="backToCourses()">
+                        <i class="fas fa-arrow-left"></i> Kembali
+                    </button>
+                    <button class="btn btn-primary" id="submit-btn" onclick="checkAnswer()">
+                        <i class="fas fa-check"></i> Submit Jawaban
+                    </button>
+                </div>
+                <div class="feedback" id="feedback"></div>
+                <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none; width: 100%; margin-top: 20px;">
+                    Pertanyaan Berikutnya <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Platform E-Learning.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
