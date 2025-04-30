@@ -1,773 +1,1144 @@
 const quizzes = {
-    1: { // MATEMATIKA
-        title: "Matematika Dasar",
+    1: {
+        title: "Matematika Lanjut (Sulit Tambahan)",
         questions: [
             {
-                question: "Hasil dari 15 - 3 × 4 + 6 adalah...",
-                options: ["9", "12", "15", "18"],
-                answer: 0,
-                explanation: "Operasi perkalian dulu: 15 - 12 + 6 = 9"
+                question: "Jika f(x) = ln(x² + 1), maka nilai dari ∫₀^1 f(x) dx adalah...",
+                options: ["ln2", "1/2 ln2", "ln(5/4)", "ln(2)/2"],
+                answer: 1,
+                explanation: "Gunakan substitusi simetris atau numerik: hasilnya (1/2)ln(2)"
             },
             {
-                question: "Jika x + 7 = 15, maka nilai x adalah...",
+                question: "Turunan ke-100 dari f(x) = cos x di x=0 adalah...",
+                options: ["0", "1", "-1", "100!"],
+                answer: 0,
+                explanation: "Polanya: turunan genap ke-4n → cos; ke-4n+2 → -cos; tapi turunan ke-100 adalah 0 karena kelipatan 4 tidak menghasilkan nilai di x=0"
+            },
+            {
+                question: "Jumlah nilai eigen dari matriks A 3×3 jika tr(A)=6 adalah...",
+                options: ["0", "3", "6", "Tidak dapat ditentukan"],
+                answer: 2,
+                explanation: "Jumlah nilai eigen = trace(A) = 6"
+            },
+            {
+                question: "Jika ∫₀^∞ x⁴e^{-x} dx = a, maka nilai a adalah...",
+                options: ["4!", "5!", "6!", "24"],
+                answer: 1,
+                explanation: "Gunakan integral gamma: ∫₀^∞ x⁴e^{-x} dx = Γ(5) = 4! = 24"
+            },
+            {
+                question: "Persamaan diferensial dy/dx = y tan x, solusi umum adalah...",
+                options: ["y = C sec x", "y = C tan x", "y = C cos x", "y = C sec x + tan x"],
+                answer: 0,
+                explanation: "Pisahkan variabel, integrasi → y = C sec x"
+            },
+            {
+                question: "Jika z bilangan kompleks dan |z|=2, maka nilai maksimum dari |z + 1/z| adalah...",
+                options: ["2", "4", "5", "3"],
+                answer: 1,
+                explanation: "z = 2e^{iθ} → 1/z = (1/2)e^{-iθ} → jumlah modulus maksimum 2 + 1/2 = 2.5, tapi maksimum |z + 1/z| = √(2² + (1/2)² + 2cosθ) → max=4"
+            },
+            {
+                question: "Jika P(x) berderajat 3 dan P(1)=1, P(2)=8, P(3)=27, maka P(4)=...",
+                options: ["64", "55", "50", "81"],
+                answer: 0,
+                explanation: "Terlihat P(x) = x³ → P(4) = 64"
+            },
+            {
+                question: "Solusi umum dari y'' - y = 0 adalah...",
+                options: ["Ae^x + Be^{-x}", "Ae^x - Be^{-x}", "Ae^{-x}", "Ae^x"],
+                answer: 0,
+                explanation: "Karakteristik: r² - 1 = 0 → r = ±1 → solusi Ae^x + Be^{-x}"
+            },
+            {
+                question: "Jika ∫₀^π sin⁵x dx = a, maka nilai a adalah...",
+                options: ["16/15", "8/15", "32/15", "0"],
+                answer: 1,
+                explanation: "Gunakan reduksi: ∫sin⁵x dx = (8/15)π"
+            },
+            {
+                question: "Nilai limit lim(x→0) (e^x - 1 - x)/x² adalah...",
+                options: ["0", "1", "1/2", "∞"],
+                answer: 2,
+                explanation: "Gunakan deret Taylor e^x = 1 + x + x²/2 + ... → limit = 1/2"
+            },
+            {
+                question: "Jika y = x^x, maka dy/dx di x=1 adalah...",
+                options: ["1", "e", "1 + ln x", "2"],
+                answer: 0,
+                explanation: "Gunakan logaritma: y = x^x → ln y = x ln x → dy/dx = x^x (1 + ln x) → x=1 → dy/dx = 1"
+            },
+            {
+                question: "Jika ∫₀^π x sin x dx = aπ, maka nilai a adalah...",
+                options: ["1", "π", "2", "π/2"],
+                answer: 0,
+                explanation: "Integrasi parsial → a = 1"
+            },
+            {
+                question: "Jika A dan B matriks 2×2 dan AB = BA, maka det(A+B) adalah...",
+                options: ["det A + det B", "det A + det B + 2 det(AB)", "Tidak selalu bisa ditentukan", "det(A+B) = det(A) + det(B) jika AB=BA"],
+                answer: 2,
+                explanation: "Tidak ada rumus langsung untuk det(A+B) meskipun AB=BA"
+            },
+            {
+                question: "Pangkat terkecil n sehingga (1+x)^n memiliki suku x^7 adalah...",
+                options: ["7", "8", "6", "9"],
+                answer: 1,
+                explanation: "Suku x^7 muncul pertama kali di deret binomial saat n ≥ 7 → agar ada suku ke-8: n ≥ 7 → n=7 → x⁷ muncul, jadi n=7"
+            },
+            {
+                question: "Jika lim(x→∞) (x² + ax + 1)/(x² + bx + 2) = 1, maka nilai a - b adalah...",
+                options: ["1", "0", "-1", "Tidak dapat ditentukan"],
+                answer: 1,
+                explanation: "Karena derajat sama, batas hanya ditentukan oleh koefisien tertinggi → 1 jika a=b"
+            },
+            {
+                question: "Misal f(x) = |x|^x, maka nilai f(0) adalah...",
+                options: ["0", "1", "Tak terdefinisi", "∞"],
+                answer: 2,
+                explanation: "x^x tidak terdefinisi di x=0 karena 0^0 tidak pasti"
+            },
+            {
+                question: "Jika ∑(n=1 to ∞) 1/n² = π²/6, maka ∑(n=1 to ∞) 1/(2n)² adalah...",
+                options: ["π²/24", "π²/6", "π²/12", "π²/8"],
+                answer: 0,
+                explanation: "1/4 dari jumlah semua bilangan ganjil genap: (1/4)(π²/6) = π²/24"
+            },
+            {
+                question: "Jika f(x) = sin x / x, maka lim x→0 f(x) adalah...",
+                options: ["0", "1", "∞", "Tidak ada"],
+                answer: 1,
+                explanation: "Limit terkenal: sin x / x → 1 saat x→0"
+            },
+            {
+                question: "Peluang 3 orang duduk berurutan dari 5 orang adalah...",
+                options: ["1/5", "3/10", "2/5", "1/2"],
+                answer: 2,
+                explanation: "Jumlah susunan: 5! = 120, susunan berurutan: 3! × 3 × 2 = 48 → peluang = 48/120 = 2/5"
+            },
+            {
+                question: "Jika matriks A = [[0,-1],[1,0]], maka A⁴ = ...",
+                options: ["I", "-I", "0", "A"],
+                answer: 0,
+                explanation: "A² = -I → A⁴ = (-I)² = I"
+            }
+        ]
+    },
+    
+    2:{
+        title: "Bahasa Inggris (Sulit)",
+        questions: [
+            {
+                question: "Which sentence uses the subjunctive mood correctly?",
+                options: [
+                    "If I was you, I would go.",
+                    "I wish I was taller.",
+                    "It is essential that he be present.",
+                    "She was here as if she is the manager."
+                ],
+                answer: 2,
+                explanation: "In formal English, the subjunctive 'be' is used after 'It is essential that...'"
+            },
+            {
+                question: "Identify the correct usage of 'whom' in a sentence.",
+                options: [
+                    "Whom is going to the party?",
+                    "To whom did you give the book?",
+                    "Whom you said was coming?",
+                    "Whom do you think will win?"
+                ],
+                answer: 1,
+                explanation: "'To whom' is correct as it is the object of the verb 'give'."
+            },
+            {
+                question: "Which sentence contains a dangling modifier?",
+                options: [
+                    "Driving down the street, the house came into view.",
+                    "While he was driving, he saw a deer.",
+                    "After studying, I took a nap.",
+                    "The boy, running fast, won the race."
+                ],
+                answer: 0,
+                explanation: "The modifier 'Driving down the street' incorrectly refers to 'the house'."
+            },
+            {
+                question: "What is the correct form of the verb in the conditional sentence: 'Had I known, I ____ helped you.'?",
+                options: ["will have", "would", "would have", "had"],
+                answer: 2,
+                explanation: "This is a third conditional structure → 'would have + past participle'"
+            },
+            {
+                question: "Which word is the best replacement for 'ubiquitous'?",
+                options: ["Rare", "Unusual", "Omnipresent", "Singular"],
+                answer: 2,
+                explanation: "'Ubiquitous' means present everywhere → synonym: omnipresent"
+            },
+            {
+                question: "Choose the sentence with correct parallel structure.",
+                options: [
+                    "She likes dancing, to swim, and biking.",
+                    "He enjoys reading, writing, and to paint.",
+                    "They went hiking, swimming, and cycling.",
+                    "I love to cook, gardening, and painting."
+                ],
+                answer: 2,
+                explanation: "All elements use gerund form: hiking, swimming, cycling."
+            },
+            {
+                question: "Which sentence uses a correct idiom?",
+                options: [
+                    "He kicked the bucket and went to the market.",
+                    "Let’s call it a day and sleep forever.",
+                    "She spilled the beans about the surprise party.",
+                    "He let the cat out and it was a disaster."
+                ],
+                answer: 2,
+                explanation: "'Spill the beans' is the correct idiom meaning to reveal a secret."
+            },
+            {
+                question: "Which is a complex sentence?",
+                options: [
+                    "She went home, and he stayed.",
+                    "After the show ended, we went to eat.",
+                    "He ran fast and won.",
+                    "Close the door."
+                ],
+                answer: 1,
+                explanation: "A complex sentence contains one independent clause and one dependent clause."
+            },
+            {
+                question: "Which sentence has correct subject-verb agreement?",
+                options: [
+                    "The list of items are on the desk.",
+                    "Neither of the answers make sense.",
+                    "Each of the books is new.",
+                    "The team have won the match."
+                ],
+                answer: 2,
+                explanation: "'Each' is singular → verb 'is'"
+            },
+            {
+                question: "Choose the correct usage of a phrasal verb.",
+                options: [
+                    "She broke up the glass.",
+                    "He looked the word up in the dictionary.",
+                    "They ran into trouble and hid it.",
+                    "I got over the stairs quickly."
+                ],
+                answer: 1,
+                explanation: "'Look up' (a word) is the correct separable phrasal verb."
+            },
+            {
+                question: "Which word has the correct stress in pronunciation for a noun?",
+                options: ["record", "permit", "present", "desert"],
+                answer: 2,
+                explanation: "As a noun, 'present' is stressed on the first syllable."
+            },
+            {
+                question: "What is the meaning of 'ephemeral'?",
+                options: ["Eternal", "Short-lived", "Horrible", "Confusing"],
+                answer: 1,
+                explanation: "'Ephemeral' means lasting a very short time."
+            },
+            {
+                question: "Which sentence correctly uses a reduced relative clause?",
+                options: [
+                    "The man who is talking is my father.",
+                    "The man talking is my father.",
+                    "The man is talking is my father.",
+                    "The talking man who is is my father."
+                ],
+                answer: 1,
+                explanation: "Reduced clause: 'who is talking' → 'talking'"
+            },
+            {
+                question: "Choose the grammatically correct sentence:",
+                options: [
+                    "Being a doctor, the salary is good.",
+                    "While sleeping, the phone rang.",
+                    "Working late, she missed the train.",
+                    "To being happy, you must relax."
+                ],
+                answer: 2,
+                explanation: "Correct structure: 'Working late, she missed the train.'"
+            },
+            {
+                question: "Which sentence contains an appositive phrase?",
+                options: [
+                    "My friend, a doctor, lives in New York.",
+                    "He ran quickly across the field.",
+                    "They are building a new mall.",
+                    "She is tired because of work."
+                ],
+                answer: 0,
+                explanation: "Appositive: 'a doctor' renames 'my friend'."
+            },
+            {
+                question: "Which sentence is punctuated correctly?",
+                options: [
+                    "However she was late, she got the job.",
+                    "She was late however, she got the job.",
+                    "She was late; however, she got the job.",
+                    "She was late however she got the job."
+                ],
+                answer: 2,
+                explanation: "Correct punctuation uses semicolon before and comma after 'however'"
+            },
+            {
+                question: "Which is a cleft sentence?",
+                options: [
+                    "She passed the exam easily.",
+                    "It was John who solved the problem.",
+                    "John solved the problem quickly.",
+                    "He really worked hard."
+                ],
+                answer: 1,
+                explanation: "Cleft sentence for emphasis: 'It was John who...'"
+            },
+            {
+                question: "Which sentence contains a mixed conditional?",
+                options: [
+                    "If I had studied, I would pass.",
+                    "If I study, I will pass.",
+                    "If I had studied, I would be rich now.",
+                    "If I studied, I would have passed."
+                ],
+                answer: 2,
+                explanation: "Mixed conditional = past condition, present result"
+            },
+            {
+                question: "Which sentence correctly uses inversion?",
+                options: [
+                    "Never I have seen such beauty.",
+                    "Rarely have I seen such beauty.",
+                    "Hardly I could believe it.",
+                    "Only then I understood."
+                ],
+                answer: 1,
+                explanation: "Inversion: 'Rarely have I...'"
+            },
+            {
+                question: "Which sentence demonstrates correct use of a gerund?",
+                options: [
+                    "He enjoyed to swim.",
+                    "Swimming is her favorite activity.",
+                    "She avoids to talk in public.",
+                    "To reading is important."
+                ],
+                answer: 1,
+                explanation: "'Swimming' is a gerund used as subject of the sentence."
+            }
+        ]
+    },
+    
+    
+    3: {
+        title: "Kimia Dasar (Sulit)",
+        questions: [
+            {
+                question: "Bilangan kuantum utama (n) menentukan...",
+                options: ["Bentuk orbital", "Energi dan ukuran orbital", "Orientasi orbital", "Spin elektron"],
+                answer: 1,
+                explanation: "Bilangan kuantum utama (n) menentukan tingkat energi dan ukuran orbital."
+            },
+            {
+                question: "Konfigurasi elektron dari ion Fe³⁺ adalah...",
+                options: ["[Ar] 3d⁶", "[Ar] 3d⁵", "[Ar] 4s² 3d⁶", "[Ar] 4s¹ 3d⁶"],
+                answer: 1,
+                explanation: "Fe = [Ar] 4s² 3d⁶ → Fe³⁺ kehilangan 3 elektron: [Ar] 3d⁵."
+            },
+            {
+                question: "Larutan penyangga adalah...",
+                options: [
+                    "Larutan yang dapat mengubah pH drastis",
+                    "Larutan yang mempertahankan pH meski ditambah asam/basa",
+                    "Larutan garam netral",
+                    "Larutan dengan pH = 7"
+                ],
+                answer: 1,
+                explanation: "Larutan penyangga mempertahankan pH terhadap penambahan asam atau basa."
+            },
+            {
+                question: "Reaksi redoks selalu melibatkan...",
+                options: ["Perubahan warna", "Perubahan suhu", "Transfer elektron", "Pelepasan gas"],
+                answer: 2,
+                explanation: "Redoks = reduksi + oksidasi → terjadi perpindahan elektron."
+            },
+            {
+                question: "Dalam ikatan kovalen koordinasi, pasangan elektron berasal dari...",
+                options: ["Kedua atom", "Atom yang lebih elektronegatif", "Satu atom saja", "Ion negatif"],
+                answer: 2,
+                explanation: "Ikatan kovalen koordinasi: elektron berasal dari satu atom donor."
+            },
+            {
+                question: "Rumus empirik senyawa dengan 40% C, 6.7% H, dan 53.3% O adalah...",
+                options: ["CH₂O", "C₂H₄O₂", "C₃H₆O₃", "CHO"],
+                answer: 0,
+                explanation: "Dihitung dari perbandingan mol → CH₂O."
+            },
+            {
+                question: "Entalpi pembentukan standar (ΔHf°) dari unsur dalam bentuk paling stabil adalah...",
+                options: ["0 kJ/mol", "1 kJ/mol", "-1 kJ/mol", "Tergantung suhu"],
+                answer: 0,
+                explanation: "ΔHf° unsur standar = 0 kJ/mol secara konvensi."
+            },
+            {
+                question: "Hukum Hess menyatakan bahwa...",
+                options: [
+                    "Jumlah massa pereaksi = produk",
+                    "Entropi sistem selalu meningkat",
+                    "Energi total reaksi independen terhadap jalur reaksi",
+                    "Tekanan dan volume berbanding lurus"
+                ],
+                answer: 2,
+                explanation: "Hukum Hess → perubahan entalpi total tidak tergantung jalur reaksi."
+            },
+            {
+                question: "Zat yang dapat berperan sebagai asam dan basa disebut...",
+                options: ["Asam kuat", "Basa kuat", "Amfoter", "Katalis"],
+                answer: 2,
+                explanation: "Zat amfoter bisa bertindak sebagai asam maupun basa (contoh: H₂O, Al(OH)₃)."
+            },
+            {
+                question: "Pada keadaan standar, 1 mol gas ideal menempati volume sebesar...",
+                options: ["22,4 L", "24,5 L", "1 L", "12 L"],
+                answer: 0,
+                explanation: "1 mol gas ideal pada STP (0°C, 1 atm) = 22,4 liter."
+            },
+            {
+                question: "Jenis ikatan dalam senyawa NaCl adalah...",
+                options: ["Kovalen polar", "Kovalen nonpolar", "Ionik", "Logam"],
+                answer: 2,
+                explanation: "NaCl → logam + nonlogam → ikatan ionik (elektron dipindahkan)."
+            },
+            {
+                question: "Hukum Avogadro menyatakan bahwa...",
+                options: [
+                    "Volume gas sebanding dengan tekanannya",
+                    "Volume gas sebanding dengan jumlah molnya",
+                    "Volume gas berbanding terbalik dengan temperaturnya",
+                    "Semua zat padat memiliki massa jenis sama"
+                ],
+                answer: 1,
+                explanation: "Volume gas sebanding dengan jumlah mol jika P dan T konstan."
+            },
+            {
+                question: "Jumlah ikatan sigma (σ) dalam etena (C₂H₄) adalah...",
+                options: ["2", "4", "5", "6"],
+                answer: 2,
+                explanation: "C=C memiliki 1 ikatan sigma + 1 pi, total σ = 5."
+            },
+            {
+                question: "Jika Kc ≫ 1, maka arah reaksi cenderung ke...",
+                options: ["Kiri", "Kanan", "Tetap", "Bergantung suhu"],
+                answer: 1,
+                explanation: "Kc besar → produk dominan → reaksi ke kanan."
+            },
+            {
+                question: "Zat yang mengalami penurunan bilangan oksidasi disebut...",
+                options: ["Oksidator", "Reduktor", "Teroksidasi", "Tereduksi"],
+                answer: 3,
+                explanation: "Reduksi = penurunan bilangan oksidasi."
+            },
+            {
+                question: "Semakin kecil jari-jari atom dalam satu periode, maka...",
+                options: ["Afinitas elektron berkurang", "Energi ionisasi meningkat", "Reaktivitas bertambah", "Elektronegativitas turun"],
+                answer: 1,
+                explanation: "Kecilnya jari-jari → elektron lebih sulit dilepas → energi ionisasi meningkat."
+            },
+            {
+                question: "Orbital 3p dapat menampung maksimum berapa elektron?",
+                options: ["2", "4", "6", "10"],
+                answer: 2,
+                explanation: "Subkulit p memiliki 3 orbital → maksimal 6 elektron."
+            },
+            {
+                question: "Larutan yang bersifat elektrolit kuat akan...",
+                options: [
+                    "Tidak menghantarkan listrik",
+                    "Menghantarkan listrik sangat baik",
+                    "Hanya sebagian terionisasi",
+                    "Tidak terionisasi"
+                ],
+                answer: 1,
+                explanation: "Elektrolit kuat → terionisasi sempurna → hantar listrik baik."
+            },
+            {
+                question: "Fungsi katalis dalam reaksi kimia adalah...",
+                options: ["Mengubah ΔH reaksi", "Meningkatkan hasil produk", "Menurunkan energi aktivasi", "Menstabilkan produk"],
+                answer: 2,
+                explanation: "Katalis menurunkan energi aktivasi, mempercepat reaksi."
+            },
+            {
+                question: "pKa kecil menunjukkan...",
+                options: ["Asam lemah", "Basa kuat", "Asam kuat", "Basa lemah"],
+                answer: 2,
+                explanation: "Semakin kecil pKa, semakin kuat asamnya (berbanding terbalik dengan Ka)."
+            }
+        ]
+    },
+    
+    
+    4:{
+        title: "Fisika Dasar (Sulit)",
+        questions: [
+            {
+                question: "Jika percepatan sentripetal adalah 4 m/s² dan jari-jari lintasan 2 m, maka kecepatan linear benda adalah...",
+                options: ["2 m/s", "4 m/s", "√8 m/s", "8 m/s"],
+                answer: 2,
+                explanation: "a = v²/r → v = √(a×r) = √(4×2) = √8 m/s."
+            },
+            {
+                question: "Hukum Faraday tentang induksi elektromagnetik menyatakan bahwa ggl induksi sebanding dengan...",
+                options: [
+                    "Kuat arus listrik",
+                    "Luas penampang kumparan",
+                    "Laju perubahan fluks magnet",
+                    "Jumlah muatan listrik"
+                ],
+                answer: 2,
+                explanation: "GGL ∝ perubahan fluks magnet per satuan waktu."
+            },
+            {
+                question: "Jika energi potensial pegas adalah 18 J dan konstanta pegasnya 200 N/m, maka simpangannya adalah...",
+                options: ["0.3 m", "0.6 m", "0.9 m", "1.2 m"],
+                answer: 0,
+                explanation: "Ep = ½kx² → x = √(2Ep/k) = √(36/200) = 0.3 m."
+            },
+            {
+                question: "Benda jatuh bebas dari ketinggian 45 m. Kecepatan saat menyentuh tanah (abaikan resistansi udara) adalah...",
+                options: ["15 m/s", "30 m/s", "20 m/s", "25 m/s"],
+                answer: 1,
+                explanation: "v² = 2gh → v = √(2×10×45) = √900 = 30 m/s."
+            },
+            {
+                question: "Sebuah kawat lurus panjang dialiri arus listrik. Medan magnet di sekitar kawat berbentuk...",
+                options: [
+                    "Lurus menjauhi kawat",
+                    "Lurus menuju kawat",
+                    "Melingkar mengelilingi kawat",
+                    "Tidak terbentuk medan"
+                ],
+                answer: 2,
+                explanation: "Menurut aturan tangan kanan, medan berbentuk lingkaran mengelilingi kawat."
+            },
+            {
+                question: "Dalam hukum Boyle, tekanan gas berbanding terbalik dengan...",
+                options: ["Massa gas", "Volume", "Temperatur", "Waktu"],
+                answer: 1,
+                explanation: "P ∝ 1/V pada suhu tetap (hukum Boyle)."
+            },
+            {
+                question: "Sebuah benda massa 5 kg diangkat vertikal setinggi 3 meter. Usaha yang dilakukan adalah...",
+                options: ["15 J", "50 J", "150 J", "75 J"],
+                answer: 2,
+                explanation: "W = mgh = 5×10×3 = 150 J."
+            },
+            {
+                question: "Sebuah bola bermassa 0,2 kg dilempar horizontal dengan kecepatan 10 m/s dari ketinggian 20 m. Waktu jatuhnya adalah...",
+                options: ["2 s", "√4 s", "√2 s", "4 s"],
+                answer: 1,
+                explanation: "h = ½gt² → t = √(2h/g) = √(40/10) = √4 = 2 s."
+            },
+            {
+                question: "Hukum Gauss digunakan untuk menghitung...",
+                options: [
+                    "Gaya gesek",
+                    "Medan listrik dari distribusi muatan",
+                    "Percepatan benda",
+                    "Induksi magnet"
+                ],
+                answer: 1,
+                explanation: "Hukum Gauss mempermudah perhitungan medan listrik dari distribusi simetris muatan."
+            },
+            {
+                question: "Satuan dari fluks magnetik adalah...",
+                options: ["Tesla", "Weber", "Henry", "Ampere"],
+                answer: 1,
+                explanation: "Fluks magnetik satuannya adalah Weber (Wb)."
+            },
+            {
+                question: "Jika panjang gelombang adalah 0,5 m dan frekuensi 600 Hz, maka cepat rambat gelombangnya adalah...",
+                options: ["300 m/s", "120 m/s", "150 m/s", "240 m/s"],
+                answer: 0,
+                explanation: "v = λ × f = 0.5 × 600 = 300 m/s."
+            },
+            {
+                question: "Laju pendinginan suatu benda berbanding lurus dengan perbedaan suhu menurut hukum...",
+                options: ["Stefan-Boltzmann", "Planck", "Newton", "Boyle"],
+                answer: 2,
+                explanation: "Hukum pendinginan Newton: dQ/dt ∝ ΔT."
+            },
+            {
+                question: "Sebuah lensa cembung memiliki fokus 10 cm. Sebuah benda diletakkan 15 cm dari lensa. Maka bayangan akan terbentuk pada...",
+                options: ["-30 cm", "+30 cm", "-6 cm", "+6 cm"],
+                answer: 1,
+                explanation: "1/f = 1/s + 1/s' → s' = 30 cm (positif, nyata, terbalik)."
+            },
+            {
+                question: "Sebuah trafo step-up memiliki 100 lilitan primer dan 500 lilitan sekunder. Tegangan primer 10 V, maka tegangan sekunder adalah...",
+                options: ["20 V", "50 V", "100 V", "60 V"],
+                answer: 1,
+                explanation: "Vs/Vp = Ns/Np → Vs = 10×(500/100) = 50 V."
+            },
+            {
+                question: "Hambatan ekuivalen dua resistor R1 = 4Ω dan R2 = 6Ω dalam rangkaian paralel adalah...",
+                options: ["10 Ω", "2.4 Ω", "5 Ω", "1.5 Ω"],
+                answer: 1,
+                explanation: "1/R = 1/4 + 1/6 → R = 2.4 Ω."
+            },
+            {
+                question: "Dalam hukum Archimedes, gaya apung sama dengan...",
+                options: [
+                    "Berat benda",
+                    "Berat zat cair yang dipindahkan",
+                    "Massa benda dikali percepatan",
+                    "Tekanan hidrostatik"
+                ],
+                answer: 1,
+                explanation: "Gaya apung = berat zat cair yang dipindahkan."
+            },
+            {
+                question: "Efek Doppler terjadi ketika...",
+                options: [
+                    "Sumber dan pengamat tidak bergerak",
+                    "Gelombang dipantulkan",
+                    "Sumber atau pengamat bergerak",
+                    "Gelombang teredam"
+                ],
+                answer: 2,
+                explanation: "Efek Doppler: perubahan frekuensi akibat gerakan relatif sumber/pengamat."
+            },
+            {
+                question: "Hukum Coulomb menyatakan bahwa gaya listrik berbanding terbalik dengan...",
+                options: ["Jarak", "Jarak²", "Muatan", "Luas penampang"],
+                answer: 1,
+                explanation: "F ∝ 1/r² (jarak antara muatan)."
+            },
+            {
+                question: "Jika daya listrik adalah 60 watt dan tegangan 12 volt, maka kuat arusnya adalah...",
+                options: ["5 A", "0.2 A", "2 A", "10 A"],
+                answer: 2,
+                explanation: "P = V×I → I = P/V = 60/12 = 5 A."
+            },
+            {
+                question: "Sebuah benda bermassa 1 kg bergerak dengan kecepatan 20 m/s. Energi kinetiknya adalah...",
+                options: ["100 J", "200 J", "400 J", "800 J"],
+                answer: 1,
+                explanation: "Ek = ½mv² = 0.5×1×400 = 200 J."
+            }
+        ]
+    },
+
+
+     5:
+        {
+        title: "Penalaran Matematika (Sulit)",
+        questions: [
+            {
+                question: "Jika f(x) = 3x² - 2x + 1 dan g(x) = x - 4, maka nilai f(g(2)) adalah...",
+                options: ["21", "13", "7", "1"],
+                answer: 2,
+                explanation: "g(2) = -2, f(-2) = 3(-2)² - 2(-2) + 1 = 12 + 4 + 1 = 17."
+            },
+            {
+                question: "Diketahui himpunan A = {x | x bilangan bulat, -3 < x ≤ 4}. Banyaknya anggota himpunan A adalah...",
                 options: ["6", "7", "8", "9"],
-                answer: 2,
-                explanation: "x = 15 - 7 = 8"
-            },
-            {
-                question: "Bentuk pecahan sederhana dari 0.75 adalah...",
-                options: ["1/4", "1/2", "3/4", "4/5"],
-                answer: 2,
-                explanation: "0.75 = 75/100 = 3/4"
-            },
-            {
-                question: "Luas persegi dengan sisi 6 cm adalah...",
-                options: ["12 cm²", "24 cm²", "36 cm²", "48 cm²"],
-                answer: 2,
-                explanation: "Luas = sisi × sisi = 6 × 6 = 36 cm²"
-            },
-            {
-                question: "FPB dari 18 dan 24 adalah...",
-                options: ["3", "6", "9", "12"],
                 answer: 1,
-                explanation: "Faktor 18: 1,2,3,6,9,18; Faktor 24: 1,2,3,4,6,8,12,24 → FPB = 6"
+                explanation: "Anggota A = {-2, -1, 0, 1, 2, 3, 4} → 7 anggota."
             },
             {
-                question: "Hasil dari 4³ adalah...",
-                options: ["12", "16", "64", "256"],
+                question: "Jika x dan y memenuhi sistem persamaan: x + y = 7 dan x² + y² = 37, maka nilai xy adalah...",
+                options: ["6", "12", "7", "11"],
+                answer: 0,
+                explanation: "(x + y)² = x² + y² + 2xy → 49 = 37 + 2xy → 2xy = 12 → xy = 6."
+            },
+            {
+                question: "Diketahui barisan aritmetika dengan suku ke-3 adalah 10 dan suku ke-7 adalah 22. Suku pertama barisan tersebut adalah...",
+                options: ["2", "4", "6", "8"],
+                answer: 1,
+                explanation: "U₃ = a + 2d = 10, U₇ = a + 6d = 22 → eliminasi → d = 3, a = 4."
+            },
+            {
+                question: "Hasil dari lim (x→2) [(x² - 4)/(x - 2)] adalah...",
+                options: ["2", "4", "∞", "Tidak terdefinisi"],
+                answer: 1,
+                explanation: "(x² - 4) = (x - 2)(x + 2) → limit = x + 2 = 4."
+            },
+            {
+                question: "Jika matriks A = [[2, 1], [3, 4]], maka determinan dari A adalah...",
+                options: ["5", "10", "11", "8"],
+                answer: 0,
+                explanation: "det(A) = 2×4 - 1×3 = 8 - 3 = 5."
+            },
+            {
+                question: "Nilai maksimum dari fungsi f(x) = -x² + 4x + 5 adalah...",
+                options: ["5", "9", "11", "12"],
                 answer: 2,
-                explanation: "4 × 4 × 4 = 64"
+                explanation: "puncak = -b/2a = -4/-2 = 2 → f(2) = -4 + 8 + 5 = 9."
             },
             {
-                question: "Jika 3x - 5 = 16, maka nilai x adalah...",
-                options: ["5", "6", "7", "8"],
-                answer: 2,
-                explanation: "3x = 21 → x = 7"
-            },
-            {
-                question: "Volume kubus dengan rusuk 4 cm adalah...",
-                options: ["16 cm³", "32 cm³", "48 cm³", "64 cm³"],
+                question: "Jika log(x) + log(x - 3) = 1, maka nilai x adalah...",
+                options: ["1", "3", "4", "5"],
                 answer: 3,
-                explanation: "V = s³ = 4 × 4 × 4 = 64 cm³"
+                explanation: "log(x(x - 3)) = 1 → x² - 3x = 10 → x = 5 (akar positif)."
             },
             {
-                question: "Bentuk persen dari 3/5 adalah...",
-                options: ["30%", "50%", "60%", "75%"],
-                answer: 2,
-                explanation: "3/5 × 100% = 60%"
-            },
-            {
-                question: "KPK dari 4 dan 6 adalah...",
-                options: ["6", "12", "18", "24"],
-                answer: 1,
-                explanation: "Kelipatan 4: 4,8,12,...; Kelipatan 6: 6,12,18,... → KPK = 12"
-            },
-            {
-                question: "Jika segitiga memiliki alas 8 cm dan tinggi 5 cm, luasnya adalah...",
-                options: ["13 cm²", "20 cm²", "26 cm²", "40 cm²"],
-                answer: 1,
-                explanation: "L = ½ × alas × tinggi = ½ × 8 × 5 = 20 cm²"
-            },
-            {
-                question: "Hasil dari (-8) + 12 - (-3) adalah...",
-                options: ["-17", "-7", "7", "17"],
-                answer: 2,
-                explanation: "-8 + 12 + 3 = 7"
-            },
-            {
-                question: "2/3 + 1/4 = ...",
-                options: ["3/7", "5/12", "11/12", "3/4"],
-                answer: 2,
-                explanation: "8/12 + 3/12 = 11/12"
-            },
-            {
-                question: "Jika a:b = 3:5 dan b=20, maka nilai a adalah...",
-                options: ["8", "12", "15", "18"],
-                answer: 1,
-                explanation: "a/20 = 3/5 → a = 12"
-            },
-            {
-                question: "Bentuk sederhana dari 9x²y/3xy² adalah...",
-                options: ["3x/y", "3y/x", "3xy", "3x²y"],
+                question: "Sebuah kotak berisi 4 bola merah dan 6 bola biru. Dua bola diambil tanpa pengembalian. Peluang terambil dua bola berlainan warna adalah...",
+                options: ["1/3", "4/15", "12/45", "12/30"],
                 answer: 0,
-                explanation: "9x²y/3xy² = 3x/y"
+                explanation: "P = (4/10)(6/9) + (6/10)(4/9) = 48/90 = 8/15."
+            },
+            {
+                question: "Jika 5^(x+1) = 125, maka x adalah...",
+                options: ["2", "3", "1", "0"],
+                answer: 0,
+                explanation: "125 = 5³ → x + 1 = 3 → x = 2."
+            },
+            {
+                question: "Persamaan kuadrat dengan akar-akar 3 dan -2 adalah...",
+                options: ["x² - x - 6 = 0", "x² + x - 6 = 0", "x² - x + 6 = 0", "x² + x + 6 = 0"],
+                answer: 1,
+                explanation: "x² - (3 - 2)x + (3)(-2) = x² + x - 6."
+            },
+            {
+                question: "Rata-rata dari 5 bilangan adalah 12. Jika satu bilangan ditambahkan, rata-rata menjadi 13. Bilangan yang ditambahkan adalah...",
+                options: ["17", "18", "19", "20"],
+                answer: 2,
+                explanation: "Total awal: 5×12 = 60, total baru: 6×13 = 78 → bilangan tambahan = 18."
+            },
+            {
+                question: "Jika vektor a = (2, 3) dan b = (-1, 4), maka hasil dari a · b adalah...",
+                options: ["10", "12", "6", "14"],
+                answer: 0,
+                explanation: "a·b = 2×(-1) + 3×4 = -2 + 12 = 10."
+            },
+            {
+                question: "Jika P(x) = x² - 5x + 6, maka akar-akar dari P(x) adalah...",
+                options: ["2 dan 3", "3 dan 5", "1 dan 6", "2 dan 6"],
+                answer: 0,
+                explanation: "P(x) = (x - 2)(x - 3)."
+            },
+            {
+                question: "Diketahui a dan b bilangan real. Jika (a + bi)(a - bi) = 13 dan b = 2, maka a adalah...",
+                options: ["√9", "√5", "3", "2"],
+                answer: 2,
+                explanation: "(a² + b²) = 13, b = 2 → a² + 4 = 13 → a = √9 = 3."
+            },
+            {
+                question: "Suatu deret geometri memiliki suku pertama 2 dan rasio 3. Jumlah 4 suku pertamanya adalah...",
+                options: ["80", "98", "100", "242"],
+                answer: 0,
+                explanation: "S₄ = 2(1 - 3⁴)/(1 - 3) = 2(1 - 81)/(-2) = 80."
+            },
+            {
+                question: "Jika x + 1/x = 4, maka nilai dari x² + 1/x² adalah...",
+                options: ["14", "12", "16", "10"],
+                answer: 0,
+                explanation: "Kuadratkan: x² + 2 + 1/x² = 16 → x² + 1/x² = 14."
+            },
+            {
+                question: "Jika sin A = 3/5 dan sudut A di kuadran I, maka nilai cos A adalah...",
+                options: ["4/5", "3/4", "5/4", "√11/5"],
+                answer: 0,
+                explanation: "cos A = √(1 - sin² A) = √(1 - 9/25) = √(16/25) = 4/5."
+            },
+            {
+                question: "Dalam bidang kompleks, i² + (1 + i)(1 - i) sama dengan...",
+                options: ["0", "1", "2", "-1"],
+                answer: 1,
+                explanation: "i² = -1, (1+i)(1-i) = 1 - i² = 2 → -1 + 2 = 1."
+            },
+            {
+                question: "Jumlah semua bilangan ganjil antara 10 dan 30 adalah...",
+                options: ["200", "180", "160", "160"],
+                answer: 2,
+                explanation: "Barisan: 11 + 13 + ... + 29 → n = 10, a = 11, l = 29 → Sn = n/2 (a + l) = 5×40 = 200."
             }
         ]
     },
-    2: { // BAHASA INGGRIS
-        title: "Bahasa Inggris",
-        questions: [
-            {
-                question: "What is the past form of 'eat'?",
-                options: ["eated", "ate", "eaten", "eating"],
-                answer: 1,
-                explanation: "Past tense of 'eat' is 'ate'."
-            },
-            {
-                question: "Which sentence is correct?",
-                options: [
-                    "She don't have any books.",
-                    "He doesn't has a car.",
-                    "They doesn't like coffee.",
-                    "I don't understand the question."
-                ],
-                answer: 3,
-                explanation: "'I don't understand' is grammatically correct."
-            },
-            {
-                question: "What is the antonym of 'generous'?",
-                options: ["Kind", "Selfish", "Friendly", "Honest"],
-                answer: 1,
-                explanation: "'Selfish' is the opposite of 'generous'."
-            },
-            {
-                question: "Which word is spelled correctly?",
-                options: ["Accomodate", "Embarrass", "Harassment", "Occured"],
-                answer: 2,
-                explanation: "'Harassment' is the correct spelling."
-            },
-            {
-                question: "The correct passive form of 'They built this house' is:",
-                options: [
-                    "This house was build by them.",
-                    "This house was built by them.",
-                    "This house is built by them.",
-                    "This house built by them."
-                ],
-                answer: 1,
-                explanation: "Correct passive: was + past participle (built)."
-            },
-            {
-                question: "What is the comparative form of 'good'?",
-                options: ["gooder", "more good", "better", "best"],
-                answer: 2,
-                explanation: "Comparative of 'good' is 'better'."
-            },
-            {
-                question: "Which sentence uses present perfect correctly?",
-                options: [
-                    "I have seen that movie yesterday.",
-                    "She has lived here since 2010.",
-                    "They have went to Paris last year.",
-                    "He has finished his work tomorrow."
-                ],
-                answer: 1,
-                explanation: "'Has lived' with 'since' is correct present perfect usage."
-            },
-            {
-                question: "What is the plural of 'child'?",
-                options: ["childs", "children", "childes", "childrens"],
-                answer: 1,
-                explanation: "Irregular plural: child → children."
-            },
-            {
-                question: "Which word is a conjunction?",
-                options: ["Beautiful", "Quickly", "Because", "Under"],
-                answer: 2,
-                explanation: "'Because' is a conjunction connecting clauses."
-            },
-            {
-                question: "What is the meaning of 'diligent'?",
-                options: ["Lazy", "Hardworking", "Intelligent", "Creative"],
-                answer: 1,
-                explanation: "'Diligent' means hardworking and persistent."
-            },
-            {
-                question: "Which is the correct question tag: 'You like coffee, _____?'",
-                options: ["do you", "don't you", "like you", "isn't it"],
-                answer: 1,
-                explanation: "Positive statement → negative tag 'don't you'."
-            },
-            {
-                question: "What is the superlative form of 'far'?",
-                options: ["farther", "farthest", "more far", "most far"],
-                answer: 1,
-                explanation: "Superlative of 'far' is 'farthest'."
-            },
-            {
-                question: "Which sentence is in future tense?",
-                options: [
-                    "I am going to school.",
-                    "She will visit her grandmother tomorrow.",
-                    "They have finished their homework.",
-                    "We were watching TV."
-                ],
-                answer: 1,
-                explanation: "'Will visit' expresses future action."
-            },
-            {
-                question: "What is the synonym of 'begin'?",
-                options: ["Start", "Finish", "Continue", "Stop"],
-                answer: 0,
-                explanation: "'Start' means the same as 'begin'."
-            },
-            {
-                question: "Which is the correct indirect speech: 'He said, 'I am happy''",
-                options: [
-                    "He said he is happy.",
-                    "He said he was happy.",
-                    "He said I am happy.",
-                    "He said I was happy."
-                ],
-                answer: 1,
-                explanation: "Present tense changes to past in reported speech."
-            }
-        ]
-    },
-    3: { // KIMIA DASAR
-        title: "Kimia Dasar",
-        questions: [
-            {
-                question: "Unsur dengan simbol 'Na' adalah...",
-                options: ["Natrium", "Neon", "Nikel", "Nitrogen"],
-                answer: 0,
-                explanation: "Na = Natrium (sodium)."
-            },
-            {
-                question: "pH larutan netral pada suhu 25°C adalah...",
-                options: ["0", "7", "14", "10"],
-                answer: 1,
-                explanation: "pH 7 = netral, <7 asam, >7 basa."
-            },
-            {
-                question: "Reaksi yang menyerap panas disebut...",
-                options: ["Eksoterm", "Endoterm", "Isoterm", "Poloterm"],
-                answer: 1,
-                explanation: "Reaksi endoterm menyerap panas dari lingkungan."
-            },
-            {
-                question: "Jumlah proton + neutron dalam atom disebut...",
-                options: ["Nomor atom", "Nomor massa", "Valensi", "Isotop"],
-                answer: 1,
-                explanation: "Nomor massa = proton + neutron."
-            },
-            {
-                question: "Rumus kimia garam dapur adalah...",
-                options: ["NaOH", "HCl", "NaCl", "H2O"],
-                answer: 2,
-                explanation: "Garam dapur = Natrium Klorida (NaCl)."
-            },
-            {
-                question: "Perubahan wujud dari cair ke padat disebut...",
-                options: ["Mencair", "Membeku", "Menguap", "Menyublim"],
-                answer: 1,
-                explanation: "Pembekuan = cair → padat."
-            },
-            {
-                question: "Gas yang paling banyak di atmosfer bumi adalah...",
-                options: ["Oksigen", "Karbon dioksida", "Nitrogen", "Hidrogen"],
-                answer: 2,
-                explanation: "Atmosfer mengandung ~78% nitrogen."
-            },
-            {
-                question: "Zat yang menghambat reaksi disebut...",
-                options: ["Katalis", "Inhibitor", "Oksidator", "Reduktor"],
-                answer: 1,
-                explanation: "Inhibitor memperlambat reaksi kimia."
-            },
-            {
-                question: "Larutan dengan pH=1 termasuk...",
-                options: ["Asam kuat", "Asam lemah", "Basa kuat", "Basa lemah"],
-                answer: 0,
-                explanation: "pH 1 sangat asam (mendekati 0 = asam kuat)."
-            },
-            {
-                question: "Reaksi antara asam dan basa menghasilkan...",
-                options: ["Gas", "Logam", "Garam dan air", "Polimer"],
-                answer: 2,
-                explanation: "Asam + Basa → Garam + Air (reaksi netralisasi)."
-            },
-            {
-                question: "Unsur yang termasuk golongan halogen adalah...",
-                options: ["Natrium", "Klorin", "Argon", "Kalsium"],
-                answer: 1,
-                explanation: "Halogen: F, Cl, Br, I, At (golongan 17)."
-            },
-            {
-                question: "Proses pemisahan campuran berdasarkan titik didih disebut...",
-                options: ["Filtrasi", "Sublimasi", "Destilasi", "Kromatografi"],
-                answer: 2,
-                explanation: "Destilasi memisahkan berdasarkan perbedaan titik didih."
-            },
-            {
-                question: "Jenis ikatan antara atom-atom logam disebut...",
-                options: ["Ionik", "Kovalen", "Logam", "Hidrogen"],
-                answer: 2,
-                explanation: "Ikatan logam terjadi antara atom-atom logam."
-            },
-            {
-                question: "Lambang kimia untuk besi adalah...",
-                options: ["Fe", "Be", "Br", "Bi"],
-                answer: 0,
-                explanation: "Fe = Ferrum (besi)."
-            },
-            {
-                question: "Perubahan kimia ditandai dengan...",
-                options: [
-                    "Perubahan wujud saja",
-                    "Perubahan warna dan bau",
-                    "Terbentuknya zat baru",
-                    "Perubahan suhu saja"
-                ],
-                answer: 2,
-                explanation: "Perubahan kimia menghasilkan zat baru dengan sifat berbeda."
-            }
-        ]
-    },
-    4: { // FISIKA
-        title: "Fisika Dasar",
-        questions: [
-            {
-                question: "Satuan SI untuk gaya adalah...",
-                options: ["Joule", "Watt", "Newton", "Pascal"],
-                answer: 2,
-                explanation: "Gaya diukur dalam Newton (N)."
-            },
-            {
-                question: "Rumus untuk menghitung kecepatan adalah...",
-                options: ["v = s × t", "v = s / t", "v = t / s", "v = a × t"],
-                answer: 1,
-                explanation: "Kecepatan = jarak/waktu (v = s/t)."
-            },
-            {
-                question: "Hukum Newton I disebut juga hukum...",
-                options: [
-                    "Aksi-Reaksi",
-                    "Gravitasi",
-                    "Inersia",
-                    "Percepatan"
-                ],
-                answer: 2,
-                explanation: "Hukum Newton I = Hukum Inersia (kelembaman)."
-            },
-            {
-                question: "Alat untuk mengukur massa adalah...",
-                options: ["Termometer", "Neraca", "Speedometer", "Barometer"],
-                answer: 1,
-                explanation: "Neraca digunakan untuk mengukur massa."
-            },
-            {
-                question: "Bunyi merambat paling cepat melalui...",
-                options: ["Padat", "Cair", "Gas", "Vakum"],
-                answer: 0,
-                explanation: "Bunyi merambat paling cepat di medium padat."
-            },
-            {
-                question: "Energi yang dimiliki benda karena geraknya disebut...",
-                options: [
-                    "Energi potensial",
-                    "Energi kinetik",
-                    "Energi panas",
-                    "Energi kimia"
-                ],
-                answer: 1,
-                explanation: "Energi kinetik = energi gerak (½mv²)."
-            },
-            {
-                question: "Alat yang mengubah energi listrik menjadi energi gerak adalah...",
-                options: ["Generator", "Motor listrik", "Baterai", "Transformator"],
-                answer: 1,
-                explanation: "Motor listrik mengubah listrik → gerak."
-            },
-            {
-                question: "Hukum kekekalan energi menyatakan bahwa energi...",
-                options: [
-                    "Dapat diciptakan",
-                    "Dapat dimusnahkan",
-                    "Tidak dapat diciptakan/dimusnahkan",
-                    "Berubah menjadi materi"
-                ],
-                answer: 2,
-                explanation: "Energi hanya berubah bentuk, tidak bisa diciptakan/dimusnahkan."
-            },
-            {
-                question: "Benda akan mengapung jika...",
-                options: [
-                    "ρ benda > ρ zat cair",
-                    "ρ benda = ρ zat cair",
-                    "ρ benda < ρ zat cair",
-                    "Tidak tergantung massa jenis"
-                ],
-                answer: 2,
-                explanation: "Benda mengapung jika massa jenisnya < zat cair."
-            },
-            {
-                question: "Satuan daya dalam SI adalah...",
-                options: ["Joule", "Watt", "Volt", "Ampere"],
-                answer: 1,
-                explanation: "Daya diukur dalam Watt (W)."
-            },
-            {
-                question: "Gaya tarik bumi disebut...",
-                options: ["Gaya magnet", "Gaya gravitasi", "Gaya listrik", "Gaya gesek"],
-                answer: 1,
-                explanation: "Gravitasi bumi menarik benda ke pusat bumi."
-            },
-            {
-                question: "Alat untuk mengukur suhu adalah...",
-                options: ["Barometer", "Hygrometer", "Termometer", "Speedometer"],
-                answer: 2,
-                explanation: "Termometer mengukur suhu."
-            },
-            {
-                question: "Cermin yang digunakan pada kaca spion mobil adalah...",
-                options: [
-                    "Cermin datar",
-                    "Cermin cekung",
-                    "Cermin cembung",
-                    "Lensa cekung"
-                ],
-                answer: 2,
-                explanation: "Kaca spion menggunakan cermin cembung untuk bidang pandang lebih luas."
-            },
-            {
-                question: "Perubahan dari padat ke cair disebut...",
-                options: ["Membeku", "Mencair", "Menguap", "Menyublim"],
-                answer: 1,
-                explanation: "Pencairan = padat → cair."
-            },
-            {
-                question: "Hukum Ohm menyatakan bahwa...",
-                options: [
-                    "V = I × R",
-                    "I = V × R",
-                    "R = V × I",
-                    "P = V × I"
-                ],
-                answer: 0,
-                explanation: "Hukum Ohm: Tegangan (V) = Arus (I) × Hambatan (R)."
-            }
-        ]
-    },
-    5: { // PENALARAN KUANTITATIF
-        title: "Penalaran Kuantitatif",
-        questions: [
-            {
-                question: "Jika 2x + 3 = 11, maka nilai x adalah...",
-                options: ["3", "4", "5", "6"],
-                answer: 1,
-                explanation: "2x = 8 → x = 4"
-            },
-            {
-                question: "Sebuah persegi panjang memiliki panjang 12 cm dan lebar 8 cm. Kelilingnya adalah...",
-                options: ["20 cm", "40 cm", "80 cm", "96 cm"],
-                answer: 1,
-                explanation: "Keliling = 2×(p+l) = 2×20 = 40 cm"
-            },
-            {
-                question: "Jika 40% dari suatu bilangan adalah 60, maka bilangan tersebut adalah...",
-                options: ["120", "140", "150", "180"],
-                answer: 2,
-                explanation: "40% x = 60 → x = 60/0.4 = 150"
-            },
-            {
-                question: "Dalam sebuah kotak terdapat 5 bola merah dan 3 bola biru. Peluang terambil bola biru adalah...",
-                options: ["3/5", "3/8", "5/8", "8/3"],
-                answer: 1,
-                explanation: "Peluang = jumlah biru/total = 3/8"
-            },
-            {
-                question: "Jika a=4 dan b=5, maka nilai dari 2a + 3b adalah...",
-                options: ["17", "20", "23", "26"],
-                answer: 2,
-                explanation: "2×4 + 3×5 = 8 + 15 = 23"
-            },
-            {
-                question: "Rata-rata dari 6, 8, 10, dan 12 adalah...",
-                options: ["8", "9", "10", "12"],
-                answer: 1,
-                explanation: "(6+8+10+12)/4 = 36/4 = 9"
-            },
-            {
-                question: "Jika 5x - 7 = 18, maka nilai x adalah...",
-                options: ["3", "4", "5", "6"],
-                answer: 2,
-                explanation: "5x = 25 → x = 5"
-            },
-            {
-                question: "FPB dari 36 dan 48 adalah...",
-                options: ["6", "12", "18", "24"],
-                answer: 1,
-                explanation: "Faktorisasi: 36=2²×3², 48=2⁴×3 → FPB=2²×3=12"
-            },
-            {
-                question: "Luas lingkaran dengan jari-jari 10 cm adalah... (π=3.14)",
-                options: ["31.4 cm²", "62.8 cm²", "314 cm²", "628 cm²"],
-                answer: 2,
-                explanation: "L = πr² = 3.14×100 = 314 cm²"
-            },
-            {
-                question: "Jika 6 pekerja dapat menyelesaikan proyek dalam 10 hari, berapa hari yang dibutuhkan 4 pekerja?",
-                options: ["12", "15", "18", "20"],
-                answer: 1,
-                explanation: "Total pekerjaan = 6×10 = 60 orang-hari. 4 pekerja → 60/4 = 15 hari"
-            },
-            {
-                question: "Nilai dari √144 + ∛8 adalah...",
-                options: ["10", "12", "14", "16"],
-                answer: 2,
-                explanation: "√144=12 + ∛8=2 → 14"
-            },
-            {
-                question: "Jika y berbanding lurus dengan x dan y=20 saat x=5, berapa y saat x=7?",
-                options: ["24", "28", "32", "35"],
-                answer: 1,
-                explanation: "y = kx → 20 = k×5 → k=4. Untuk x=7: y=4×7=28"
-            },
-            {
-                question: "Hasil dari 1 + 3 + 5 + ... + 9 adalah...",
-                options: ["20", "25", "30", "35"],
-                answer: 1,
-                explanation: "1+3+5+7+9 = 25"
-            },
-            {
-                question: "Jika 3x + 4 < 19, nilai x yang memenuhi adalah...",
-                options: ["x < 5", "x < 6", "x > 5", "x > 6"],
-                answer: 0,
-                explanation: "3x < 15 → x < 5"
-            },
-            {
-                question: "Bentuk sederhana dari (3xy²)² adalah...",
-                options: ["3x²y⁴", "6x²y⁴", "9x²y⁴", "9xy⁴"],
-                answer: 2,
-                explanation: "(3xy²)² = 9x²y⁴"
-            }
-        ]
-    },
-             6: { 
-                title: "Ilmu Sejarah",
+    
+    
+             6: {
+                title: "Ilmu Sejarah (Sulit)",
                 questions: [
                     {
-                        question: "Siapa tokoh proklamator kemerdekaan Indonesia?",
-                        options: ["Sukarno dan Hatta", "Sudirman dan Diponegoro", "Hatta dan Tan Malaka", "Sukarno dan Soe Hok Gie"],
+                        question: "Mengapa Peristiwa Rengasdengklok menjadi titik penting dalam proses kemerdekaan Indonesia?",
+                        options: [
+                            "Karena menunjukkan adanya perbedaan pandangan antara golongan tua dan muda",
+                            "Karena merupakan tempat pengibaran bendera pertama",
+                            "Karena di sana dilakukan perundingan dengan Jepang",
+                            "Karena Soekarno dan Hatta ditawan Belanda"
+                        ],
                         answer: 0,
-                        explanation: "Sukarno dan Mohammad Hatta memproklamasikan kemerdekaan Indonesia pada 17 Agustus 1945."
+                        explanation: "Peristiwa ini menunjukkan desakan golongan muda agar proklamasi segera dilaksanakan tanpa campur tangan Jepang."
                     },
                     {
-                        question: "Kapan Indonesia merdeka?",
-                        options: ["17 Agustus 1945", "20 Mei 1908", "10 November 1945", "1 Juni 1945"],
-                        answer: 0,
-                        explanation: "Proklamasi kemerdekaan Indonesia terjadi pada 17 Agustus 1945."
-                    },
-                    {
-                        question: "Apa nama kerajaan Hindu tertua di Indonesia?",
-                        options: ["Sriwijaya", "Majapahit", "Kutai", "Tarumanegara"],
+                        question: "Apa alasan utama dibentuknya Panitia Sembilan oleh BPUPKI?",
+                        options: [
+                            "Membuat teks proklamasi",
+                            "Menyusun konstitusi sementara",
+                            "Merumuskan dasar negara",
+                            "Menjembatani konflik antara Islam dan nasionalis"
+                        ],
                         answer: 2,
-                        explanation: "Kerajaan Kutai adalah kerajaan Hindu tertua yang berdiri di Kalimantan Timur."
+                        explanation: "Panitia Sembilan bertugas merumuskan dasar negara, menghasilkan Piagam Jakarta."
                     },
                     {
-                        question: "Kerajaan Majapahit mencapai puncak kejayaannya pada masa pemerintahan siapa?",
-                        options: ["Gajah Mada", "Raden Wijaya", "Hayam Wuruk", "Airlangga"],
-                        answer: 2,
-                        explanation: "Kerajaan Majapahit mencapai kejayaannya di bawah pemerintahan Hayam Wuruk dengan Mahapatih Gajah Mada."
-                    },
-                    {
-                        question: "Siapa penulis naskah Sumpah Palapa?",
-                        options: ["Hayam Wuruk", "Gajah Mada", "Patih Logender", "Raden Wijaya"],
+                        question: "Apa konsekuensi politik dari dibubarkannya VOC oleh Belanda pada tahun 1799?",
+                        options: [
+                            "Belanda menyerahkan Indonesia ke Inggris",
+                            "Pemerintahan kolonial langsung diambil alih oleh Kerajaan Belanda",
+                            "Indonesia mendapatkan otonomi terbatas",
+                            "VOC berubah menjadi PETA"
+                        ],
                         answer: 1,
-                        explanation: "Gajah Mada mengucapkan Sumpah Palapa untuk mempersatukan Nusantara."
+                        explanation: "Setelah VOC bubar, wilayah jajahan langsung diatur oleh pemerintah Kerajaan Belanda."
                     },
                     {
-                        question: "Peristiwa Rengasdengklok terjadi sebelum...",
-                        options: ["Proklamasi Kemerdekaan", "Perjanjian Linggarjati", "Pertempuran Surabaya", "Konferensi Meja Bundar"],
-                        answer: 0,
-                        explanation: "Peristiwa Rengasdengklok terjadi pada 16 Agustus 1945, sehari sebelum proklamasi."
+                        question: "Apa latar belakang munculnya Sumpah Palapa oleh Gajah Mada?",
+                        options: [
+                            "Keinginan pribadi menjadi raja",
+                            "Komitmen menyatukan nusantara di bawah Majapahit",
+                            "Balas dendam terhadap kerajaan Sriwijaya",
+                            "Amanat dari Raden Wijaya"
+                        ],
+                        answer: 1,
+                        explanation: "Sumpah Palapa adalah tekad Gajah Mada menyatukan seluruh nusantara di bawah kekuasaan Majapahit."
                     },
                     {
-                        question: "Siapa pemimpin kerajaan Islam pertama di Indonesia?",
-                        options: ["Sultan Malik Al Saleh", "Sultan Agung", "Sultan Hasanuddin", "Sunan Kalijaga"],
+                        question: "Apa dampak internasional dari Konferensi Asia Afrika tahun 1955?",
+                        options: [
+                            "Munculnya gerakan Non-Blok",
+                            "Dekolonisasi negara-negara Asia Tenggara",
+                            "Indonesia menjadi anggota PBB",
+                            "Perang Dingin berakhir"
+                        ],
                         answer: 0,
-                        explanation: "Sultan Malik Al Saleh adalah raja pertama Kesultanan Samudera Pasai, kerajaan Islam pertama."
+                        explanation: "Konferensi ini menjadi tonggak awal berdirinya Gerakan Non-Blok."
                     },
                     {
-                        question: "Apa isi Trikora?",
-                        options: ["Pembebasan Irian Barat", "Kemerdekaan Aceh", "Serangan Umum 1 Maret", "Reformasi Pendidikan"],
+                        question: "Mengapa Sultan Hasanuddin dijuluki 'Ayam Jantan dari Timur'?",
+                        options: [
+                            "Karena keberaniannya melawan VOC",
+                            "Karena menguasai perdagangan rempah",
+                            "Karena mempersatukan kerajaan di Timur",
+                            "Karena menjadi panglima tertinggi Mataram"
+                        ],
                         answer: 0,
-                        explanation: "Trikora bertujuan untuk merebut kembali Irian Barat dari tangan Belanda."
+                        explanation: "Ia dikenal karena perlawanan gigih terhadap penjajahan VOC di Sulawesi Selatan."
                     },
                     {
-                        question: "Kapan VOC dibubarkan?",
-                        options: ["1799", "1800", "1942", "1602"],
-                        answer: 0,
-                        explanation: "VOC dibubarkan oleh pemerintah Belanda pada tahun 1799 karena korupsi dan kerugian."
+                        question: "Mengapa Trikora dianggap sebagai bagian penting dari sejarah integrasi nasional Indonesia?",
+                        options: [
+                            "Karena menjadi awal Operasi Trikora di Aceh",
+                            "Karena menunjukkan kekuatan diplomasi Soekarno",
+                            "Karena mempercepat masuknya Irian Barat ke NKRI",
+                            "Karena mendukung kemerdekaan Timor Leste"
+                        ],
+                        answer: 2,
+                        explanation: "Trikora diluncurkan untuk merebut kembali Irian Barat dari Belanda."
                     },
                     {
-                        question: "Apa nama piagam yang menjadi cikal bakal dasar negara Indonesia?",
-                        options: ["Piagam Jakarta", "UUD 1945", "Dekrit Presiden", "Sumpah Pemuda"],
-                        answer: 0,
-                        explanation: "Piagam Jakarta dirumuskan pada 22 Juni 1945 dan menjadi cikal bakal Pancasila."
+                        question: "Apa yang menyebabkan runtuhnya kerajaan Majapahit secara bertahap?",
+                        options: [
+                            "Serangan dari Kesultanan Demak",
+                            "Krisis suksesi dan konflik internal",
+                            "Invasi Portugis",
+                            "Bencana alam yang besar"
+                        ],
+                        answer: 1,
+                        explanation: "Majapahit melemah karena perebutan takhta dan konflik internal setelah wafatnya Hayam Wuruk."
                     },
                     {
-                        question: "Siapa pendiri Budi Utomo?",
-                        options: ["Dr. Soetomo", "Ki Hajar Dewantara", "Moh. Yamin", "Tjipto Mangunkusumo"],
+                        question: "Apa alasan Belanda mendirikan Cultuurstelsel (tanam paksa)?",
+                        options: [
+                            "Mengisi kas negara setelah bangkrutnya VOC",
+                            "Untuk meningkatkan kesejahteraan petani",
+                            "Mengganti sistem feodal lokal",
+                            "Sebagai bentuk bantuan pangan"
+                        ],
                         answer: 0,
-                        explanation: "Dr. Soetomo mendirikan Budi Utomo pada 20 Mei 1908."
+                        explanation: "Belanda menerapkan tanam paksa untuk memperbaiki kondisi ekonomi mereka setelah VOC bangkrut."
                     },
                     {
-                        question: "Apa makna penting dari Sumpah Pemuda 1928?",
-                        options: ["Pemersatu semangat nasionalisme", "Awal perjuangan diplomatik", "Pembentukan TNI", "Bentuk perlawanan bersenjata"],
+                        question: "Mengapa Piagam Jakarta mengalami perubahan sebelum disahkan menjadi Pancasila?",
+                        options: [
+                            "Desakan dari golongan Kristen dan Indonesia Timur",
+                            "Campur tangan Jepang",
+                            "Penolakan dari BPUPKI",
+                            "Permintaan Soekarno dan Hatta"
+                        ],
                         answer: 0,
-                        explanation: "Sumpah Pemuda menyatukan pemuda Indonesia dalam satu bangsa, satu tanah air, dan satu bahasa."
+                        explanation: "Kalimat 'dengan kewajiban menjalankan syariat Islam bagi pemeluknya' dihapus karena penolakan dari Indonesia Timur."
                     },
                     {
-                        question: "Dimana Konferensi Asia Afrika dilaksanakan?",
-                        options: ["Bandung", "Jakarta", "Yogyakarta", "Surabaya"],
-                        answer: 0,
-                        explanation: "Konferensi Asia Afrika diselenggarakan di Bandung pada tahun 1955."
+                        question: "Apa kontribusi Tan Malaka dalam sejarah perjuangan kemerdekaan Indonesia?",
+                        options: [
+                            "Menjadi Presiden pertama Republik Indonesia",
+                            "Mendirikan Partai Komunis Indonesia",
+                            "Menjadi tokoh penggerak kemerdekaan dari luar negeri",
+                            "Menandatangani proklamasi kemerdekaan"
+                        ],
+                        answer: 2,
+                        explanation: "Tan Malaka dikenal sebagai pemikir revolusioner yang memperjuangkan kemerdekaan dari luar negeri."
                     },
                     {
-                        question: "Siapa tokoh utama di balik peristiwa 10 November di Surabaya?",
-                        options: ["Bung Tomo", "Soedirman", "Moh. Hatta", "Tan Malaka"],
+                        question: "Apa isi penting dari Perjanjian Linggarjati?",
+                        options: [
+                            "Belanda mengakui kedaulatan Indonesia atas Jawa dan Sumatera",
+                            "Belanda mengakui kedaulatan penuh RI",
+                            "RI menjadi negara bagian Belanda",
+                            "Belanda membentuk VOC kembali"
+                        ],
                         answer: 0,
-                        explanation: "Bung Tomo membakar semangat rakyat dalam pertempuran 10 November di Surabaya."
+                        explanation: "Linggarjati menyatakan pengakuan Belanda terhadap de facto kedaulatan RI atas Jawa, Madura, dan Sumatera."
                     },
                     {
-                        question: "Kapan Kerajaan Sriwijaya mengalami masa kejayaan?",
-                        options: ["Abad ke-7 hingga ke-11", "Abad ke-10 hingga ke-14", "Abad ke-4 hingga ke-6", "Abad ke-14 hingga ke-15"],
+                        question: "Apa perbedaan utama antara Perjanjian Linggarjati dan Renville?",
+                        options: [
+                            "Linggarjati menguntungkan Belanda, Renville menguntungkan Indonesia",
+                            "Linggarjati didukung Amerika Serikat",
+                            "Renville lebih membatasi wilayah kekuasaan Indonesia",
+                            "Renville membahas ekonomi, bukan politik"
+                        ],
+                        answer: 2,
+                        explanation: "Perjanjian Renville membatasi kekuasaan Indonesia hanya pada wilayah-wilayah kecil."
+                    },
+                    {
+                        question: "Mengapa Jepang dapat diterima oleh sebagian rakyat Indonesia saat pertama kali datang?",
+                        options: [
+                            "Jepang menjanjikan kemerdekaan Indonesia",
+                            "Jepang membantu mengembangkan pendidikan",
+                            "Jepang membagikan tanah dan modal",
+                            "Jepang membuka sistem demokrasi"
+                        ],
                         answer: 0,
-                        explanation: "Kerajaan Sriwijaya berjaya sebagai kerajaan maritim besar di Asia Tenggara abad ke-7 hingga ke-11."
+                        explanation: "Awalnya Jepang diterima karena propaganda 'Saudara Tua' dan janji kemerdekaan."
+                    },
+                    {
+                        question: "Apa yang menjadi latar belakang dibentuknya BPUPKI?",
+                        options: [
+                            "Desakan dari Sekutu",
+                            "Permintaan Soekarno",
+                            "Persiapan kemerdekaan oleh Jepang",
+                            "Hasil Konferensi Asia-Afrika"
+                        ],
+                        answer: 2,
+                        explanation: "BPUPKI dibentuk oleh Jepang untuk menarik simpati rakyat Indonesia menjelang kekalahan mereka."
+                    },
+                    {
+                        question: "Apa bentuk perjuangan diplomatik yang dilakukan oleh Indonesia setelah proklamasi?",
+                        options: [
+                            "Pengiriman delegasi ke PBB",
+                            "Membentuk TNI",
+                            "Menyerang Belanda secara langsung",
+                            "Mengadakan pemilu nasional"
+                        ],
+                        answer: 0,
+                        explanation: "Indonesia aktif melakukan diplomasi ke negara asing dan PBB untuk mendapatkan pengakuan."
+                    },
+                    {
+                        question: "Mengapa Soekarno dan Hatta dipilih sebagai proklamator?",
+                        options: [
+                            "Mereka tokoh muda yang radikal",
+                            "Mereka mendapat dukungan Jepang",
+                            "Mereka tokoh nasionalis yang berpengaruh dan disepakati bersama",
+                            "Mereka berasal dari golongan Islam"
+                        ],
+                        answer: 2,
+                        explanation: "Keduanya merupakan tokoh penting yang dapat diterima oleh semua golongan."
+                    },
+                    {
+                        question: "Mengapa pendirian Budi Utomo dianggap sebagai tonggak kebangkitan nasional?",
+                        options: [
+                            "Organisasi ini bersenjata",
+                            "Merupakan organisasi pertama yang bersifat kedaerahan",
+                            "Menjadi organisasi modern pertama yang bertujuan kemajuan bangsa",
+                            "Didirikan oleh pemerintah Belanda"
+                        ],
+                        answer: 2,
+                        explanation: "Budi Utomo adalah organisasi modern pertama yang memperjuangkan pendidikan dan kebudayaan bangsa."
+                    },
+                    {
+                        question: "Apa dampak penting dari politik etis Belanda di Indonesia?",
+                        options: [
+                            "Kemiskinan merata",
+                            "Tumbuhnya kaum intelektual pribumi",
+                            "Perang Diponegoro",
+                            "Pemerintahan desentralisasi"
+                        ],
+                        answer: 1,
+                        explanation: "Politik etis membuka akses pendidikan yang memunculkan kaum terdidik seperti Soetomo dan Ki Hajar Dewantara."
+                    },
+                    {
+                        question: "Apa faktor utama kekalahan tentara Jepang di Asia Tenggara termasuk Indonesia?",
+                        options: [
+                            "Kurangnya dukungan rakyat",
+                            "Serangan Sekutu dan bom atom di Hiroshima-Nagasaki",
+                            "Perlawanan sengit dari Indonesia",
+                            "Krisis ekonomi dalam negeri Jepang"
+                        ],
+                        answer: 1,
+                        explanation: "Kekalahan Jepang disebabkan oleh serangan Sekutu dan bom atom yang menjatuhkan moral dan kekuatan militer."
                     }
                 ]
             }
             
+            
         };
 
 
-let currentQuiz = null;
-let currentQuestionIndex = 0;
-let selectedOption = null;
-let score = {
-    correct: 0,
-    wrong: 0
-};
-
-function showQuiz(quizId) {
-    document.getElementById('courses').style.display = 'none';
-    document.getElementById('quiz-section').style.display = 'block';
-    
-    currentQuiz = quizzes[quizId];
-    currentQuestionIndex = 0;
-    score = { correct: 0, wrong: 0 }; // Reset skor setiap memulai quiz baru
-    
-    document.getElementById('quiz-title').textContent = currentQuiz.title;
-    loadQuestion();
-    updateProgress();
-}
-
-function loadQuestion() {
-    if (currentQuestionIndex >= currentQuiz.questions.length) {
-        const percentage = Math.round((score.correct / currentQuiz.questions.length) * 100);
-        let resultClass = '';
-        if (percentage >= 80) resultClass = 'excellent';
-        else if (percentage >= 60) resultClass = 'good';
-        else resultClass = 'poor';
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let selectedOption = null;
+        let score = {
+            correct: 0,
+            wrong: 0
+        };
         
-        document.getElementById('quiz-content').innerHTML = `
-            <div class="quiz-result ${resultClass}">
-                <h3>Quiz Selesai!</h3>
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span>${percentage}%</span>
-                    </div>
-                    <div class="score-details">
-                        <p><i class="fas fa-check correct-icon"></i> Jawaban Benar: <strong>${score.correct}</strong></p>
-                        <p><i class="fas fa-times wrong-icon"></i> Jawaban Salah: <strong>${score.wrong}</strong></p>
-                        <p>Total Pertanyaan: <strong>${currentQuiz.questions.length}</strong></p>
-                    </div>
-                </div>
-                <button class="btn btn-primary" onclick="backToCourses()">
-                    <i class="fas fa-home"></i> Kembali ke Daftar Kursus
-                </button>
-            </div>
-        `;
-        document.getElementById('submit-btn').style.display = 'none';
-        document.getElementById('next-btn').style.display = 'none';
-        document.getElementById('back-btn').style.display = 'none';
-        return;
-    }
-
-    const quizContent = document.getElementById('quiz-content');
-    const currentQuestion = currentQuiz.questions[currentQuestionIndex];
-    
-    quizContent.innerHTML = `
-        <div class="quiz-question">${currentQuestionIndex + 1}. ${currentQuestion.question}</div>
-        <div class="quiz-options" id="quiz-options">
-            ${currentQuestion.options.map((option, index) => `
-                <div class="quiz-option" onclick="selectOption(${index})">
-                   <input type="radio" name="quiz-option" value="${index}">
-                    <label>${option}</label>
-                </div>
-            `).join('')}
-        </div>
-    `;
-    
-    document.getElementById('feedback').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'none';
-    document.getElementById('submit-btn').style.display = 'block';
-    selectedOption = null;
-}
-
-function selectOption(optionIndex) {
-    selectedOption = optionIndex;
-    const options = document.querySelectorAll('.quiz-option');
-    options.forEach((opt, i) => {
-        const input = opt.querySelector('input[type="radio"]');
-        if (i === optionIndex) {
-            opt.style.backgroundColor = 'rgba(100, 255, 218, 0.2)';
-            opt.style.borderColor = 'var(--accent-color)';
-            input.checked = true;
-        } else {
-            opt.style.backgroundColor = 'var(--primary-light)';
-            opt.style.borderColor = 'transparent';
-            input.checked = false;
+        // Fungsi untuk mengacak array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
         }
-    });
-}
-
-function checkAnswer() {
-    if (selectedOption === null) {
-        alert('Silakan pilih jawaban terlebih dahulu!');
-        return;
-    }
-    
-    const feedback = document.getElementById('feedback');
-    const currentQuestion = currentQuiz.questions[currentQuestionIndex];
-    
-    if (selectedOption === currentQuestion.answer) {
-        score.correct++;
-        feedback.className = 'feedback correct';
-        feedback.innerHTML = `
-            <i class="fas fa-check-circle"></i> <strong>Jawaban Anda Benar!</strong>
-            <div class="explanation">${currentQuestion.explanation}</div>
-        `;
-    } else {
-        score.wrong++;
-        feedback.className = 'feedback incorrect';
-        feedback.innerHTML = `
-            <i class="fas fa-times-circle"></i> <strong>Jawaban Anda Salah.</strong>
-            <div>Jawaban yang benar: <strong>${currentQuestion.options[currentQuestion.answer]}</strong></div>
-            <div class="explanation">${currentQuestion.explanation}</div>
-        `;
-    }
-    
-    feedback.style.display = 'block';
-    document.getElementById('submit-btn').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'block';
-}
-
-function nextQuestion() {
-    currentQuestionIndex++;
-    loadQuestion();
-    updateProgress();
-}
-
-function backToCourses() {
-    document.getElementById('courses').style.display = 'block';
-    document.getElementById('quiz-section').style.display = 'none';
-}
-
-function updateProgress() {
-    const progress = ((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100;
-    document.getElementById('quiz-progress').style.width = `${progress}%`;
-    document.getElementById('progress-text').textContent = `${currentQuestionIndex + 1}/${currentQuiz.questions.length}`;
-}
+        
+        function showQuiz(quizId) {
+            document.getElementById('courses').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'block';
+        
+            // Duplikasi quiz supaya data asli tidak rusak
+            currentQuiz = JSON.parse(JSON.stringify(quizzes[quizId]));
+        
+            // Acak urutan soal
+            shuffleArray(currentQuiz.questions);
+        
+            // Reset skor dan indeks soal
+            currentQuestionIndex = 0;
+            score = { correct: 0, wrong: 0 };
+        
+            document.getElementById('quiz-title').textContent = currentQuiz.title;
+            loadQuestion();
+            updateProgress();
+        }
+        
+        function loadQuestion() {
+            if (currentQuestionIndex >= currentQuiz.questions.length) {
+                const percentage = Math.round((score.correct / currentQuiz.questions.length) * 100);
+                let resultClass = '';
+                if (percentage >= 80) resultClass = 'excellent';
+                else if (percentage >= 60) resultClass = 'good';
+                else resultClass = 'poor';
+        
+                document.getElementById('quiz-content').innerHTML = `
+                    <div class="quiz-result ${resultClass}">
+                        <h3>Quiz Selesai!</h3>
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span>${percentage}%</span>
+                            </div>
+                            <div class="score-details">
+                                <p><i class="fas fa-check correct-icon"></i> Jawaban Benar: <strong>${score.correct}</strong></p>
+                                <p><i class="fas fa-times wrong-icon"></i> Jawaban Salah: <strong>${score.wrong}</strong></p>
+                                <p>Total Pertanyaan: <strong>${currentQuiz.questions.length}</strong></p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="backToCourses()">
+                            <i class="fas fa-home"></i> Kembali ke Daftar Kursus
+                        </button>
+                    </div>
+                `;
+                document.getElementById('submit-btn').style.display = 'none';
+                document.getElementById('next-btn').style.display = 'none';
+                document.getElementById('back-btn').style.display = 'none';
+                return;
+            }
+        
+            const quizContent = document.getElementById('quiz-content');
+            const currentQuestion = currentQuiz.questions[currentQuestionIndex];
+        
+            quizContent.innerHTML = `
+                <div class="quiz-question">${currentQuestionIndex + 1}. ${currentQuestion.question}</div>
+                <div class="quiz-options" id="quiz-options">
+                    ${currentQuestion.options.map((option, index) => `
+                        <div class="quiz-option" onclick="selectOption(${index})">
+                           <input type="radio" name="quiz-option" value="${index}">
+                            <label>${option}</label>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+            document.getElementById('submit-btn').style.display = 'block';
+            selectedOption = null;
+        }
+        
+        function selectOption(optionIndex) {
+            selectedOption = optionIndex;
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                const input = opt.querySelector('input[type="radio"]');
+                if (i === optionIndex) {
+                    opt.style.backgroundColor = 'rgba(100, 255, 218, 0.2)';
+                    opt.style.borderColor = 'var(--accent-color)';
+                    input.checked = true;
+                } else {
+                    opt.style.backgroundColor = 'var(--primary-light)';
+                    opt.style.borderColor = 'transparent';
+                    input.checked = false;
+                }
+            });
+        }
+        
+        function checkAnswer() {
+            if (selectedOption === null) {
+                alert('Silakan pilih jawaban terlebih dahulu!');
+                return;
+            }
+        
+            const feedback = document.getElementById('feedback');
+            const currentQuestion = currentQuiz.questions[currentQuestionIndex];
+        
+            if (selectedOption === currentQuestion.answer) {
+                score.correct++;
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `
+                    <i class="fas fa-check-circle"></i> <strong>Jawaban Anda Benar!</strong>
+                    <div class="explanation">${currentQuestion.explanation}</div>
+                `;
+            } else {
+                score.wrong++;
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `
+                    <i class="fas fa-times-circle"></i> <strong>Jawaban Anda Salah.</strong>
+                    <div>Jawaban yang benar: <strong>${currentQuestion.options[currentQuestion.answer]}</strong></div>
+                    <div class="explanation">${currentQuestion.explanation}</div>
+                `;
+            }
+        
+            feedback.style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'block';
+        }
+        
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+            updateProgress();
+        }
+        
+        function backToCourses() {
+            document.getElementById('courses').style.display = 'block';
+            document.getElementById('quiz-section').style.display = 'none';
+        }
+        
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${progress}%`;
+            document.getElementById('progress-text').textContent = `${currentQuestionIndex + 1}/${currentQuiz.questions.length}`;
+        }
+        
