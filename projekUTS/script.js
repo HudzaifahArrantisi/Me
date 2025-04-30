@@ -1,6 +1,6 @@
 const quizzes = {
     1: {
-        title: "Matematika Lanjut (Sulit Tambahan)",
+        title: "Matematika Lanjut",
         questions: [
             {
                 question: "Jika f(x) = ln(x² + 1), maka nilai dari ∫₀^1 f(x) dx adalah...",
@@ -126,7 +126,7 @@ const quizzes = {
     },
     
     2:{
-        title: "Bahasa Inggris (Sulit)",
+        title: "Bahasa Inggris",
         questions: [
             {
                 question: "Which sentence uses the subjunctive mood correctly?",
@@ -333,7 +333,7 @@ const quizzes = {
     
     
     3: {
-        title: "Kimia Dasar (Sulit)",
+        title: "Kimia Dasar ",
         questions: [
             {
                 question: "Bilangan kuantum utama (n) menentukan...",
@@ -480,7 +480,7 @@ const quizzes = {
     
     
     4:{
-        title: "Fisika Dasar (Sulit)",
+        title: "Fisika Dasar",
         questions: [
             {
                 question: "Jika percepatan sentripetal adalah 4 m/s² dan jari-jari lintasan 2 m, maka kecepatan linear benda adalah...",
@@ -633,7 +633,7 @@ const quizzes = {
 
      5:
         {
-        title: "Penalaran Matematika (Sulit)",
+        title: "Penalaran Matematika",
         questions: [
             {
                 question: "Jika f(x) = 3x² - 2x + 1 dan g(x) = x - 4, maka nilai f(g(2)) adalah...",
@@ -760,7 +760,7 @@ const quizzes = {
     
     
              6: {
-                title: "Ilmu Sejarah (Sulit)",
+                title: "Ilmu Sejarah",
                 questions: [
                     {
                         question: "Mengapa Peristiwa Rengasdengklok menjadi titik penting dalam proses kemerdekaan Indonesia?",
