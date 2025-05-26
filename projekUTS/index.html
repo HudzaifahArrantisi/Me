@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning Ujay</title>
+    <title>E-Learning Platform</title>
     <link rel="shortcut icon" href="img/online-learning.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,14 +13,56 @@
 <body>
     <header>
         <div class="container">
-            <h1>E-Learning (Ujay)📚</h1>
-            <p>Yang dapet 100, dm aja(Kerjain depan muka)</p>
+            <h1>E-Learning Candalena📚</h1>
+            <p>Kerjain Depan muka, kalo 100% dapet kopi FM </p>
         </div>
     </header>
     <div class="container">
+        <!-- Leaderboard -->
+        <div class="leaderboard">
+            <h2><i class="fas fa-trophy"></i> Leaderboard Quiz</h2>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Skor</th>
+                        <th>Quiz</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank-1">1</td>
+                        <td>Rafa dan Ory</td>
+                        <td>100</td>
+                        <td>Ilmu Sejarah</td>
+                        <td>30:16</td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Aturan Quiz -->
+        <div class="quiz-rules">
+            <h3><i class="fas fa-info-circle"></i> Aturan Quiz Ujay</h3>
+            <ul>
+                <li>Setiap quiz ada 20 soal pilihan ganda</li>
+                <li>Skor minimal untuk setiap quiz adalah 100%</li>
+                <li>Percobaan Quiz 2X Buat 2 Mapel</li>
+                <li>Quiz Pertama Maksimal salah 2</li>
+                <li>Quiz Kedua Maksimal salah 1</li>
+                <li>Ga ada tombol balik ke pertanyaan sebelum nya wkwkwk</li>
+                <li>Kalo kerjain soal di atas 15 menit maka hadiah hangus walapun 100%</li>
+            </ul>
+        </div>
+        
         <!-- Halaman Daftar Kursus -->
         <section id="courses" style="display: block;">
-            <h2 class="section-title">Quiz nya nih </h2>
+            <h2 class="section-title">Quiz nyoba</h2>
+            
             <div class="course-container">
                 <div class="course-card">
                     <h3>Matematika (20 soal)</h3>
@@ -33,8 +75,8 @@
                     <button class="btn" onclick="showQuiz(2)"><i class="fas fa-play"></i> Mulai Latihan</button>
                 </div>
                 <div class="course-card">
-                    <h3>Kimia Dasar (20 soal)</h3>
-                    <p>Belajar kimia dasar.</p>
+                    <h3>Kimia Dasar(20 soal)</h3>
+                    <p>kimia pemula.</p>
                     <button class="btn" onclick="showQuiz(3)"><i class="fas fa-play"></i> Mulai Latihan</button>
                 </div>
                 <div class="course-card">
@@ -54,6 +96,11 @@
                         <i class="fas fa-play"></i> Mulai Latihan
                     </button>
                 </div>
+                <div class="course-card">
+                    <h3>Pemograman dasar</h3>
+                    <p>Buat pemula.</p>
+                    <button class="btn" onclick="showQuiz(7)"><i class="fas fa-play"></i> Mulai Latihan</button>
+                </div>
             </div>
             <!-- Pindahkan tombol ke bawah -->
             <a href="/index.html" class="btn back-home-btn" style="margin-top: 20px; display: inline-flex; align-items: center; justify-content: center;">
@@ -61,39 +108,45 @@
             </a>
         </section>
         
-        
-        
         <!-- Halaman Quiz -->
-        <section id="quiz-section" style="display: none;">
-            <div class="progress-container">
-                <div class="progress-info">
-                    <span>Progress</span>
-                    <span id="progress-text">0/15</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress" id="quiz-progress"></div>
-                </div>
-            </div>
-            
-            <div class="quiz-container">
-                <h2 class="quiz-title" id="quiz-title">Latihan Penalaran Kuantitatif</h2>
-                <div id="quiz-content">
-                    <!-- Konten quiz akan dimuat secara dinamis -->
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-                    <button class="btn" id="back-btn" onclick="backToCourses()">
-                        <i class="fas fa-arrow-left"></i> Kembali
-                    </button>
-                    <button class="btn btn-primary" id="submit-btn" onclick="checkAnswer()">
-                        <i class="fas fa-check"></i> Submit Jawaban
-                    </button>
-                </div>
-                <div class="feedback" id="feedback"></div>
-                <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none; width: 100%; margin-top: 20px;">
-                    Pertanyaan Berikutnya <i class="fas fa-arrow-right"></i>
+ <section id="quiz-section" style="display: none;">
+    <div class="progress-container">
+        <div class="progress-info">
+            <span>Progress</span>
+            <span id="progress-text">0/20</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" id="quiz-progress"></div>
+        </div>
+      <div class="timer-container">
+         <i class="fas fa-clock"></i>
+        <span id="quiz-timer">00:00</span>
+      </div>
+
+    </div>
+    
+    <div class="quiz-container">
+        <h2 class="quiz-title" id="quiz-title">Latihan Penalaran Kuantitatif</h2>
+        <div id="quiz-content">
+            <!-- Konten quiz akan dimuat secara dinamis -->
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <button class="btn" id="back-btn" onclick="backToCourses()">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            <div>
+                <button class="btn btn-primary" id="submit-btn" onclick="checkAnswer()">
+                    <i class="fas fa-check"></i> Submit Jawaban
                 </button>
             </div>
-        </section>
+        </div>
+        <div class="feedback" id="feedback"></div>
+        <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none; width: 100%; margin-top: 20px;">
+            Pertanyaan Berikutnya <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</section>
+
     </div>
     
     <footer>
