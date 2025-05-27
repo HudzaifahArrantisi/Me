@@ -125,211 +125,231 @@ const quizzes = {
         ]
     },
     
-    2:{
-        title: "Bahasa Inggris (Sulit)",
-        questions: [
-            {
-                question: "Which sentence uses the subjunctive mood correctly?",
-                options: [
-                    "If I was you, I would go.",
-                    "I wish I was taller.",
-                    "It is essential that he be present.",
-                    "She was here as if she is the manager."
-                ],
-                answer: 2,
-                explanation: "In formal English, the subjunctive 'be' is used after 'It is essential that...'"
-            },
-            {
-                question: "Identify the correct usage of 'whom' in a sentence.",
-                options: [
-                    "Whom is going to the party?",
-                    "To whom did you give the book?",
-                    "Whom you said was coming?",
-                    "Whom do you think will win?"
-                ],
-                answer: 1,
-                explanation: "'To whom' is correct as it is the object of the verb 'give'."
-            },
-            {
-                question: "Which sentence contains a dangling modifier?",
-                options: [
-                    "Driving down the street, the house came into view.",
-                    "While he was driving, he saw a deer.",
-                    "After studying, I took a nap.",
-                    "The boy, running fast, won the race."
-                ],
-                answer: 0,
-                explanation: "The modifier 'Driving down the street' incorrectly refers to 'the house'."
-            },
-            {
-                question: "What is the correct form of the verb in the conditional sentence: 'Had I known, I ____ helped you.'?",
-                options: ["will have", "would", "would have", "had"],
-                answer: 2,
-                explanation: "This is a third conditional structure → 'would have + past participle'"
-            },
-            {
-                question: "Which word is the best replacement for 'ubiquitous'?",
-                options: ["Rare", "Unusual", "Omnipresent", "Singular"],
-                answer: 2,
-                explanation: "'Ubiquitous' means present everywhere → synonym: omnipresent"
-            },
-            {
-                question: "Choose the sentence with correct parallel structure.",
-                options: [
-                    "She likes dancing, to swim, and biking.",
-                    "He enjoys reading, writing, and to paint.",
-                    "They went hiking, swimming, and cycling.",
-                    "I love to cook, gardening, and painting."
-                ],
-                answer: 2,
-                explanation: "All elements use gerund form: hiking, swimming, cycling."
-            },
-            {
-                question: "Which sentence uses a correct idiom?",
-                options: [
-                    "He kicked the bucket and went to the market.",
-                    "Let’s call it a day and sleep forever.",
-                    "She spilled the beans about the surprise party.",
-                    "He let the cat out and it was a disaster."
-                ],
-                answer: 2,
-                explanation: "'Spill the beans' is the correct idiom meaning to reveal a secret."
-            },
-            {
-                question: "Which is a complex sentence?",
-                options: [
-                    "She went home, and he stayed.",
-                    "After the show ended, we went to eat.",
-                    "He ran fast and won.",
-                    "Close the door."
-                ],
-                answer: 1,
-                explanation: "A complex sentence contains one independent clause and one dependent clause."
-            },
-            {
-                question: "Which sentence has correct subject-verb agreement?",
-                options: [
-                    "The list of items are on the desk.",
-                    "Neither of the answers make sense.",
-                    "Each of the books is new.",
-                    "The team have won the match."
-                ],
-                answer: 2,
-                explanation: "'Each' is singular → verb 'is'"
-            },
-            {
-                question: "Choose the correct usage of a phrasal verb.",
-                options: [
-                    "She broke up the glass.",
-                    "He looked the word up in the dictionary.",
-                    "They ran into trouble and hid it.",
-                    "I got over the stairs quickly."
-                ],
-                answer: 1,
-                explanation: "'Look up' (a word) is the correct separable phrasal verb."
-            },
-            {
-                question: "Which word has the correct stress in pronunciation for a noun?",
-                options: ["record", "permit", "present", "desert"],
-                answer: 2,
-                explanation: "As a noun, 'present' is stressed on the first syllable."
-            },
-            {
-                question: "What is the meaning of 'ephemeral'?",
-                options: ["Eternal", "Short-lived", "Horrible", "Confusing"],
-                answer: 1,
-                explanation: "'Ephemeral' means lasting a very short time."
-            },
-            {
-                question: "Which sentence correctly uses a reduced relative clause?",
-                options: [
-                    "The man who is talking is my father.",
-                    "The man talking is my father.",
-                    "The man is talking is my father.",
-                    "The talking man who is is my father."
-                ],
-                answer: 1,
-                explanation: "Reduced clause: 'who is talking' → 'talking'"
-            },
-            {
-                question: "Choose the grammatically correct sentence:",
-                options: [
-                    "Being a doctor, the salary is good.",
-                    "While sleeping, the phone rang.",
-                    "Working late, she missed the train.",
-                    "To being happy, you must relax."
-                ],
-                answer: 2,
-                explanation: "Correct structure: 'Working late, she missed the train.'"
-            },
-            {
-                question: "Which sentence contains an appositive phrase?",
-                options: [
-                    "My friend, a doctor, lives in New York.",
-                    "He ran quickly across the field.",
-                    "They are building a new mall.",
-                    "She is tired because of work."
-                ],
-                answer: 0,
-                explanation: "Appositive: 'a doctor' renames 'my friend'."
-            },
-            {
-                question: "Which sentence is punctuated correctly?",
-                options: [
-                    "However she was late, she got the job.",
-                    "She was late however, she got the job.",
-                    "She was late; however, she got the job.",
-                    "She was late however she got the job."
-                ],
-                answer: 2,
-                explanation: "Correct punctuation uses semicolon before and comma after 'however'"
-            },
-            {
-                question: "Which is a cleft sentence?",
-                options: [
-                    "She passed the exam easily.",
-                    "It was John who solved the problem.",
-                    "John solved the problem quickly.",
-                    "He really worked hard."
-                ],
-                answer: 1,
-                explanation: "Cleft sentence for emphasis: 'It was John who...'"
-            },
-            {
-                question: "Which sentence contains a mixed conditional?",
-                options: [
-                    "If I had studied, I would pass.",
-                    "If I study, I will pass.",
-                    "If I had studied, I would be rich now.",
-                    "If I studied, I would have passed."
-                ],
-                answer: 2,
-                explanation: "Mixed conditional = past condition, present result"
-            },
-            {
-                question: "Which sentence correctly uses inversion?",
-                options: [
-                    "Never I have seen such beauty.",
-                    "Rarely have I seen such beauty.",
-                    "Hardly I could believe it.",
-                    "Only then I understood."
-                ],
-                answer: 1,
-                explanation: "Inversion: 'Rarely have I...'"
-            },
-            {
-                question: "Which sentence demonstrates correct use of a gerund?",
-                options: [
-                    "He enjoyed to swim.",
-                    "Swimming is her favorite activity.",
-                    "She avoids to talk in public.",
-                    "To reading is important."
-                ],
-                answer: 1,
-                explanation: "'Swimming' is a gerund used as subject of the sentence."
-            }
-        ]
-    },
+3: {
+    title: "Bahasa Inggris (Expert)",
+    questions: [
+        {
+            question: "Which sentence correctly employs the optative subjunctive?",
+            options: [
+                "I wish he were more careful with his words.",
+                "May you live in interesting times.",
+                "God save the Queen.",
+                "Would that I had wings to fly."
+            ],
+            answer: 3,
+            explanation: "The optative subjunctive 'Would that...' expresses a wish or desire in archaic/formal English."
+        },
+        {
+            question: "Identify the sentence with correct use of the ablative absolute construction:",
+            options: [
+                "Weather permitting, we shall sail tomorrow.",
+                "All things considered, the plan succeeded.",
+                "The task being completed, they departed.",
+                "His work finished, John left the office."
+            ],
+            answer: 0,
+            explanation: "'Weather permitting' is a true ablative absolute - an independent participial phrase with its own subject."
+        },
+        {
+            question: "Which demonstrates the correct application of zeugma?",
+            options: [
+                "He broke his vow and his mother's heart.",
+                "Time flies like an arrow; fruit flies like a banana.",
+                "She sells seashells by the seashore.",
+                "The thunder roared and the lightning danced."
+            ],
+            answer: 0,
+            explanation: "Zeugma uses one verb ('broke') to govern two objects in different senses (literal and figurative)."
+        },
+        {
+            question: "Which sentence contains a proleptic accusative?",
+            options: [
+                "I consider him to be intelligent.",
+                "They elected her president.",
+                "I saw him running in the park.",
+                "We found the door unlocked."
+            ],
+            answer: 0,
+            explanation: "Proleptic accusative: 'him' is the object of 'consider' and subject of the infinitive 'to be'."
+        },
+        {
+            question: "What is the correct term for the linguistic phenomenon in 'The pen is mightier than the sword'?",
+            options: [
+                "Synecdoche",
+                "Metonymy",
+                "Metaphor",
+                "Antonomasia"
+            ],
+            answer: 1,
+            explanation: "Metonymy substitutes related concepts: 'pen' for writing/words, 'sword' for violence/war."
+        },
+        {
+            question: "Which sentence employs correct litotes?",
+            options: [
+                "She's not unattractive.",
+                "It's incredibly hot today.",
+                "He's the best player ever.",
+                "The movie was terribly boring."
+            ],
+            answer: 0,
+            explanation: "Litotes uses double negative for understatement: 'not unattractive' means 'quite attractive'."
+        },
+        {
+            question: "Identify the chiasmus in these options:",
+            options: [
+                "Ask not what your country can do for you—ask what you can do for your country.",
+                "I came, I saw, I conquered.",
+                "Government of the people, by the people, for the people.",
+                "Blood, sweat, and tears."
+            ],
+            answer: 0,
+            explanation: "Chiasmus reverses grammatical structure: 'country-you / you-country' creates mirror effect."
+        },
+        {
+            question: "Which sentence correctly uses the historical present tense for narrative effect?",
+            options: [
+                "Yesterday I go to the store and I see my old friend.",
+                "So I'm walking down the street when suddenly this dog appears.",
+                "I have been thinking about what you said yesterday.",
+                "I was walking when I had seen the accident."
+            ],
+            answer: 1,
+            explanation: "Historical present uses present tense to make past events vivid and immediate."
+        },
+        {
+            question: "What rhetorical device is exemplified by 'Colorless green ideas sleep furiously'?",
+            options: [
+                "Paradox",
+                "Oxymoron",
+                "Semantic anomaly",
+                "Catachresis"
+            ],
+            answer: 2,
+            explanation: "Chomsky's phrase demonstrates semantic anomaly - grammatically correct but semantically nonsensical."
+        },
+        {
+            question: "Which sentence contains an example of hypallage?",
+            options: [
+                "He smoked a nervous cigarette.",
+                "She whispered softly in his ear.",
+                "The angry storm clouds gathered.",
+                "Time crawled slowly forward."
+            ],
+            answer: 0,
+            explanation: "Hypallage transfers epithet: 'nervous' applies to the person, not the cigarette."
+        },
+        {
+            question: "Identify the sentence with correct use of the ethical dative:",
+            options: [
+                "I gave him the book.",
+                "She bought herself a dress.",
+                "Don't you go telling me lies.",
+                "He made them a promise."
+            ],
+            answer: 2,
+            explanation: "Ethical dative 'you' indicates the speaker's emotional involvement - 'Don't you dare...'"
+        },
+        {
+            question: "Which demonstrates correct application of hendiadys?",
+            options: [
+                "Sound and fury signifying nothing",
+                "Nice and warm weather",
+                "Safe and sound arrival",
+                "Thick and fast falling snow"
+            ],
+            answer: 1,
+            explanation: "Hendiadys uses 'and' instead of an adjective-noun: 'nice and warm' = 'nicely warm'."
+        },
+        {
+            question: "What is the technical term for the 'that' in 'I know that he is coming'?",
+            options: [
+                "Relative pronoun",
+                "Complementizer",
+                "Demonstrative pronoun",
+                "Subordinating conjunction"
+            ],
+            answer: 1,
+            explanation: "Complementizer 'that' introduces complement clauses and has no semantic content."
+        },
+        {
+            question: "Which sentence exhibits correct use of tmesis?",
+            options: [
+                "Abso-bloody-lutely fantastic!",
+                "The situation is fan-tastic.",
+                "What-so-ever you decide is fine.",
+                "Some-where over the rainbow."
+            ],
+            answer: 0,
+            explanation: "Tmesis inserts a word/phrase into another word: 'abso-bloody-lutely' splits 'absolutely'."
+        },
+        {
+            question: "Identify the sentence containing a syllepsis:",
+            options: [
+                "He stole my heart and my wallet.",
+                "Time heals all wounds and wounds all heels.",
+                "She broke her silence and her promise.",
+                "He lost his keys and his temper."
+            ],
+            answer: 1,
+            explanation: "Syllepsis uses one word in two different senses: 'wounds' as verb and noun with different meanings."
+        },
+        {
+            question: "Which sentence correctly employs anastrophe?",
+            options: [
+                "Happy is he who finds wisdom.",
+                "Wisdom he seeks above all else.",
+                "Strong with the Force you are.",
+                "Beautiful the sunset was tonight."
+            ],
+            answer: 2,
+            explanation: "Anastrophe inverts normal word order for effect: 'Strong with the Force you are' (Yoda-speak)."
+        },
+        {
+            question: "What is the correct linguistic term for words like 'thingamajig' and 'whatsit'?",
+            options: [
+                "Neologisms",
+                "Placeholder names",
+                "Portmanteau words",
+                "Onomatopoeia"
+            ],
+            answer: 1,
+            explanation: "Placeholder names (or 'placeholder words') substitute for forgotten or unknown terms."
+        },
+        {
+            question: "Which sentence demonstrates correct use of the vocative absolute?",
+            options: [
+                "John being absent, we postponed the meeting.",
+                "O Death, where is thy sting?",
+                "Speaking of weather, it's quite cold.",
+                "Frankly speaking, I disagree with you."
+            ],
+            answer: 1,
+            explanation: "Vocative absolute 'O Death' directly addresses a personified concept in formal/poetic style."
+        },
+        {
+            question: "Identify the example of catachresis:",
+            options: [
+                "I'll die if I don't get some sleep.",
+                "The leg of the table is broken.",
+                "Time is money in this business.",
+                "Her voice is music to my ears."
+            ],
+            answer: 1,
+            explanation: "Catachresis extends metaphor beyond logic: tables don't literally have 'legs' like animals."
+        },
+        {
+            question: "Which sentence contains a correct example of aposiopesis?",
+            options: [
+                "If you don't stop that, I'll—never mind.",
+                "The weather today is...how shall I put it...unpredictable.",
+                "You know what they say about assumptions...",
+                "Why, you little—! Get back here!"
+            ],
+            answer: 3,
+            explanation: "Aposiopesis breaks off mid-sentence for dramatic effect, often showing strong emotion."
+        }
+    ]
+},
     
     
     3: {
