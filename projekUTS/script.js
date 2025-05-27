@@ -125,7 +125,7 @@ const quizzes = {
         ]
     },
     
-3: {
+2: {
     title: "Bahasa Inggris (Expert)",
     questions: [
         {
