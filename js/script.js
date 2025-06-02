@@ -19,11 +19,6 @@
             menuToggle.innerHTML = '<i class="fas fa-bars text-2xl"></i>'; 
         });
     });
-
-
-
-
-
 // scroll smooth
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -67,6 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
 // scrol smooth
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
@@ -91,15 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});sew
-document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
-});
-
-document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
 });
