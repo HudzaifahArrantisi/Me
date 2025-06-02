@@ -8,6 +8,7 @@ html, body {
     overflow: hidden;
 }
 
+/* Perbaikan untuk proteksi gambar */
 img {
     -webkit-user-drag: none; /* Untuk browser berbasis WebKit (Chrome, Safari) */
     -khtml-user-drag: none; /* Untuk browser berbasis KHTML (legacy) */
@@ -27,7 +28,7 @@ img {
 /* Alternatif jika pointer-events: none mengganggu fungsionalitas */
 .protected-img {
     position: relative;
-}
+}svg
 .protected-img::after {
     content: "";
     position: absolute;
