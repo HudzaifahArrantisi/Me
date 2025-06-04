@@ -3,284 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist</title>
+    <title>My Favorite Playlist</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .song-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+            background: rgba(30, 41, 59, 0.9);
+        }
+        
+        .play-button {
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .song-card:hover .play-button {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="min-h-screen text-gray-100">
 
-    <!-- Container -->
-    <div class="container mx-auto px-4 py-8">
-        <!-- Grid untuk daftar lagu -->
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 gradient-text">My Favorite Playlist</h1>
+            </div>
+            <div class="mt-4 md:mt-0 flex items-center space-x-3">
+                <span class="text-sm text-gray-400">12 songs</span>
+                <span class="text-gray-600">•</span>
+                <span class="text-sm text-gray-400">Various artists</span>
+            </div>
+        </div>
+        
+        <!-- Grid Layout -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Item 1 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" >
-                <img src="../img/song/utopia.jpeg" alt="Artis 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#1. MY EYES</h2>
-                    <p class="text-gray-300 mb-4">Travis Scoot</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300 " href="https://open.spotify.com/track/4kjI1gwQZRKNDkw1nI475M?si=0ir-HhgMQL6jdvpAdYqrPQ&context=spotify%3Aplaylist%3A3X2SJtYdVtB1DTw6rduwMi">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            <!-- Song 1 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/utopia.jpeg" alt="MY EYES by Travis Scott" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/4kjI1gwQZRKNDkw1nI475M" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">MY EYES</h3>
+                    <p class="text-gray-400 text-sm mb-4">Travis Scott</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#1</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 2 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/type.png" alt="Artis 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#2. Type Shit</h2>
-                    <p class="text-gray-300 mb-4">Future, MetroBoomin,TravisScoot</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/28drn6tQo95MRvO0jQEo5C?si=lK_cSDNMTZ6IHLs62ZUWmw&context=spotify%3Aplaylist%3A3X2SJtYdVtB1DTw6rduwMi">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 2 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/type.png" alt="Type Shit by Future, Metro Boomin, Travis Scott" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/28drn6tQo95MRvO0jQEo5C" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Type Shit</h3>
+                    <p class="text-gray-400 text-sm mb-4">Future, Metro Boomin, Travis Scott</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#2</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 3 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/pasiison.jpeg" alt="Artis 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#3. Passionfruit</h2>
-                    <p class="text-gray-300 mb-4">Drake</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/5mCPDVBb16L4XQwDdbRUpz?si=mvV21MdjQXOR8X27lnJTlQ">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 3 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/pasiison.jpeg" alt="Passionfruit by Drake" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/5mCPDVBb16L4XQwDdbRUpz" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Passionfruit</h3>
+                    <p class="text-gray-400 text-sm mb-4">Drake</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#3</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 4 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/stras.jpeg" alt="Artis 4" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#4. All The Stars (with SZA)</h2>
-                    <p class="text-gray-300 mb-4">Kendrick Lamar, SZA</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s?si=iMxHo_M7SQa81lcXsBBkUg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 4 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/hamstead.jpeg" alt="Hampstead by Ariana Grande" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/intl-id/track/0T3gCq5ZQvGq9jqZmaAff1" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Hampstead</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ariana Grande</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#4</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 5 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/time.jpeg" alt="Artis 5" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#5. Timeless</h2>
-                    <p class="text-gray-300 mb-4">The Weekend</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/1Es7AUAhQvapIcoh3qMKDL?si=2e3y_--8Rri9hkjFcx_MTA&context=spotify%3Aplaylist%3A3X2SJtYdVtB1DTw6rduwMi">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 5 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/time.jpeg" alt="Timeless by The Weeknd" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/1Es7AUAhQvapIcoh3qMKDL" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Timeless</h3>
+                    <p class="text-gray-400 text-sm mb-4">The Weeknd</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#5</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 6 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/TV.jpeg" alt="Artis 6" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#6. TV</h2>
-                    <p class="text-gray-300 mb-4">Billie Eilish</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/3GYlZ7tbxLOxe6ewMNVTkw?si=GxLmDzsCRemllqS_7vefVg&context=spotify%3Aplaylist%3A4sYerLinojdfvymtNBrrBH">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 6 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/intro.jpeg" alt="Intro (End of the World) by Ariana Grande" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/intl-id/track/5BBkvXH2jYROUzKIB7WX7S" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Intro (End of the World)</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ariana Grande</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#6</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 7 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/pluto.jpeg" alt="Artis 7" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#7. Pluto Projector</h2>
-                    <p class="text-gray-300 mb-4">Rex Orange County</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300"  href="https://open.spotify.com/track/4EWBhKf1fOFnyMtUzACXEc?si=iV6M_DpxSQK7xPxXhY74hg&context=spotify%3Aplaylist%3A4sYerLinojdfvymtNBrrBH">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 7 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/pluto.jpeg" alt="Pluto Projector by Rex Orange County" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/4EWBhKf1fOFnyMtUzACXEc" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Pluto Projector</h3>
+                    <p class="text-gray-400 text-sm mb-4">Rex Orange County</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#7</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 8 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/theboys.jpeg" alt="Artis 8" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#8. The Boys Is Mine</h2>
-                    <p class="text-gray-300 mb-4">Ariana Grande</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/0Lmbke3KNVFXtoH2mMSHCw?si=znhfEuhuQq-YUb8bAbmGPQ" >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 8 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/stras.jpeg" alt="All The Stars by Kendrick Lamar, SZA" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">All The Stars</h3>
+                    <p class="text-gray-400 text-sm mb-4">Kendrick Lamar, SZA</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#8</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 9 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/monlight.jpeg" alt="Artis 9" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#9. Moonlight</h2>
-                    <p class="text-gray-300 mb-4">Ali Gatie</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/6L4F4btXioJPhEwz6T7YYt?si=Em6PvvSXR5ijNrk-snf-HA&context=spotify%3Aplaylist%3A4sYerLinojdfvymtNBrrBH">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 9 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/monlight.jpeg" alt="Moonlight by Ali Gatie" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/6L4F4btXioJPhEwz6T7YYt" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Moonlight</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ali Gatie</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#9</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Item 10 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/2112.jpeg" alt="Artis 10" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#10. 2112</h2>
-                    <p class="text-gray-300 mb-4">Reality Club</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/5Gxwk3TSekI4GVMpFvPBEc?si=Zh-2xjfuRuC7q2Wj4ULMCA&context=spotify%3Aplaylist%3A4sYerLinojdfvymtNBrrBH">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 10 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/2112.jpeg" alt="2112 by Reality Club" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/5Gxwk3TSekI4GVMpFvPBEc" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">2112</h3>
+                    <p class="text-gray-400 text-sm mb-4">Reality Club</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#10</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- item11 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/aim botherring.jpeg" alt="Artis 9" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#11. Am i Bothering You?</h2>
-                    <p class="text-gray-300 mb-4">Reality Club</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/4XEJR0jb29elGda86cL0IK?si=iNYQrB40RCmOaTVyTKwNsw">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 11 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/aim botherring.jpeg" alt="Am I Bothering You? by Reality Club" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/4XEJR0jb29elGda86cL0IK" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">Am I Bothering You?</h3>
+                    <p class="text-gray-400 text-sm mb-4">Reality Club</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#11</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- item12 -->
-            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src="../img/song/good4u.jpeg" alt="Artis 9" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2 text-green-400">#12. good 4 u</h2>
-                    <p class="text-gray-300 mb-4">Olivia Rodrigo</p>
-                    <div class="flex items-center space-x-4">
-                        <a class="p-2 bg-green-400 rounded-full hover:bg-green-500 transition-colors duration-300" href="https://open.spotify.com/track/4ZtFanR9U6ndgddUvNcjcG?si=ehaguD42QE-V8yIfFM6Arg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            
+            <!-- Song 12 -->
+            <div class="song-card rounded-xl overflow-hidden group relative">
+                <div class="relative">
+                    <img src="../img/song/good4u.jpeg" alt="good 4 u by Olivia Rodrigo" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://open.spotify.com/track/4ZtFanR9U6ndgddUvNcjcG" class="play-button bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg">
+                            <i class="fas fa-play text-white text-lg"></i>
                         </a>
-                        <button class="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-semibold text-lg mb-1">good 4 u</h3>
+                    <p class="text-gray-400 text-sm mb-4">Olivia Rodrigo</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">#12</span>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-400 hover:text-green-500 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-gray-300 transition-colors">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-    <a href="../index.html" class="fixed bottom-6 right-6 bg-green-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-green-500 transition-colors duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
+    
+    <!-- Back Button -->
+    <a href="../index.html" class="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-blue-500 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
+        <i class="fas fa-arrow-left text-lg"></i>
     </a>
 
 </body>
