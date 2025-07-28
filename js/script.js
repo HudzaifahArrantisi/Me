@@ -98,3 +98,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Ensure all images are set to lazy-load to improve performance
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+});
