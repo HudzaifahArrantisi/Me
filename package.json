@@ -1,0 +1,43 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "optimize-images": "node optimize-images.js",
+    "optimize": "npm run optimize-images && npm run build",
+    "analyze": "npm run build -- --mode analyze",
+    "serve": "npm run build && npm run preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HudzaifahArrantisi/Me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HudzaifahArrantisi/Me/issues"
+  },
+  "homepage": "https://github.com/HudzaifahArrantisi/Me#readme",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "@vitejs/plugin-legacy": "^7.1.0",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "postcss": "^8.5.6",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.11",
+    "terser": "^5.43.1",
+    "vite": "^7.0.6",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-static-copy": "^3.1.1"
+  }
+}
