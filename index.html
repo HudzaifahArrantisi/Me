@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
+    
+    <!-- Performance optimizations -->
+    <link rel="preload" href="css/styles.min.css" as="style">
+    <link rel="preload" href="js/script.min.js" as="script">
+    <link rel="preload" href="img/H.jpg" as="image">
+    <link rel="preload" href="img/11.png" as="image">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    
+    <!-- Critical CSS inline -->
     <style>
-        @media (max-width: 768px) {
-            .menu-open {
-                display: block;
-            }
-        }
-    </style>    
-    <link class="rounded-sm border-radius: 0.125rem;" rel="shortcut icon" href="img/H.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
+        /* Critical rendering path CSS */
+        body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+        .loading { opacity: 0; transition: opacity 0.3s; }
+        .loaded { opacity: 1; }
+        @media (max-width: 768px) { .menu-open { display: block; } }
+    </style>
+    
+    <link rel="shortcut icon" href="img/H.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.min.css">
+    
+    <!-- Optimized external resources with integrity checks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+          crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com" defer></script>
 </head>
-<script>
-    document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
 
-    document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
-</script>
+<body class="loading">
+    <!-- Image protection script moved to external file -->
+    <script src="js/image-protection.min.js" defer></script>
 <body>
     <nav class="fixed w-full bg-gray-900 text-white z-50 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-90">
         <div class="container mx-auto px-6">
@@ -963,6 +969,9 @@
     }
 </style>
 
-<script src="./js/script.js"></script>
+<!-- Optimized script loading -->
+<script src="js/script.min.js" defer></script>
+<script src="js/sw-register.min.js" defer></script>
+<script src="js/performance-monitor.min.js" defer></script>
 </body>
 </html>
