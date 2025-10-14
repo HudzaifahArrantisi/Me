@@ -1,85 +1,134 @@
-html, body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(23, 24, 49);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-/* Perbaikan untuk proteksi gambar */
-img {
-    -webkit-user-drag: none; /* Untuk browser berbasis WebKit (Chrome, Safari) */
-    -khtml-user-drag: none; /* Untuk browser berbasis KHTML (legacy) */
-    -moz-user-drag: none; /* Untuk Firefox */
-    -o-user-drag: none; /* Untuk Opera */
-    user-drag: none; /* Standar modern */
-    
-    -webkit-touch-callout: none; /* Mencegah menu popup di iOS */
-    -webkit-user-select: none; /* Chrome/Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE/Edge */
-    user-select: none; /* Standar modern */
-    
-    pointer-events: none; /* Opsional - matikan jika ingin gambar tetap bisa diklik */
-}
-
-/* Alternatif jika pointer-events: none mengganggu fungsionalitas */
-.protected-img {
-    position: relative;
-}svg
-.protected-img::after {
-    content: "";
+/* Star Animation Styles */
+.star-background {
     position: absolute;
     top: 0;
     left: 0;
-    right:  ​0;
-    bottom: 0;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-body {
-    position: fixed;
+.star {
+    position: absolute;
+    width: 2px;
+    height: 3px;
+    background: #14b8a6;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #14b8a6;
+}
+/* Scroll container */
+.scroll-row-wrapper{overflow:hidden;position:relative}
+.scroll-row{display:flex;gap:1.5rem;will-change:transform;cursor:grab;user-select:none}
+.scroll-row.dragging{cursor:grabbing;animation:none!important}
+
+/* Card */
+.card{flex:0 0 auto;width:14rem;height:19rem;background:#1f2937;border:2px solid rgba(20,184,166,.3);border-radius:.75rem;overflow:hidden;transform:scale(1);transition:transform .4s,border-color .4s;box-shadow:0 10px 25px rgba(0,0,0,.5)}
+.card img{width:100%;height:14rem;object-fit:cover;display:block}
+.card span{display:block;padding:.75rem 1rem;color:#e5e7eb;font-weight:600;text-align:center}
+.card:hover{transform:scale(1.08);border-color:#14b8a6}
+
+/* Modal */
+#popup-modal.visible{opacity:1;visibility:visible}
+#popup-modal.visible .modal-box{scale:1}
+.star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #14b8a6;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: twinkle 1s infinite;
+}
+
+/* Section Gradient Styles */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+#home-about {
+    background: linear-gradient(to bottom, #1a1a3e, #0f0f2a);
+}
+
+#skills {
+    background: linear-gradient(to bottom, #0f0f2a, #080816);
+}
+
+#projects {
+    background: linear-gradient(to bottom, #080816, #040408);
+}
+
+#galeri {
+    background: linear-gradient(to bottom, #040408, #020204);
+}
+
+footer {
+    background: #020204;
+}
+
+/* Add star density classes */
+.stars-dense::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #14b8a6;
+    box-shadow: 
+        0 0 10px #14b8a6,
+        0 0 20px #14b8a6,
+        0 0 30px #0d9488;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+}
+
+.stars-medium::before {
+    animation-duration: 2s;
+}
+
+.stars-sparse::before {
+    animation-duration: 3s;
+}
+
+/* Glowing effects for sections */
+.section-glow {
+    position: relative;
+}
+
+.section-glow::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    overflow-y: auto;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
-@keyframes slide-up {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.slide-up {
-    animation: slide-up 0.8s ease-out forwards;
+::-webkit-scrollbar-track {
+    background: #0f0f2a;
 }
 
-.hidden-item {
-    opacity: 0;
+::-webkit-scrollbar-thumb {
+    background: #2a2a5e;
+    border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    .hidden-item {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .slide-up {
-        opacity: 1;
-        transform: translateY(0);
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a7e;
 }
