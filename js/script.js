@@ -1,4 +1,5 @@
-//   navbar menu togle
+import { Analytics } from "@vercel/analytics/next"
+
   const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -98,3 +99,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+ // Simple intersection observer for scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.hidden-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    
+
